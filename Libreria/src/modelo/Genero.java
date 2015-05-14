@@ -1,0 +1,6 @@
+package modelo;
+
+public enum Genero {
+	DEPORTE, CULTURA,INGENIERIA, CIENCIAS_BASICAS, CIENCIAS_ADMINISTRATIVAS, OSCIO;
+
+}
