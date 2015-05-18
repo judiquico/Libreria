@@ -30,6 +30,7 @@ public class DialogoAdministrador extends JDialog {
 	private JPanel panel_1;
 	private JButton btnConfirmar;
 	private JButton btnCancelar;
+	private BarraHerramientasAdministrador admin;
 
 	public DialogoAdministrador() {
 		setResizable(false);
@@ -39,6 +40,8 @@ public class DialogoAdministrador extends JDialog {
 		setSize(456, 400);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout(0, 0));
+		admin  = new BarraHerramientasAdministrador();
+		add(admin, BorderLayout.NORTH);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 204, 204));

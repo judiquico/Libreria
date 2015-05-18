@@ -27,5 +27,15 @@ public class ConstantesVista {
 	public static final String BTN_CANCELAR = "Cancelar";
 	// Constantes Dialogo Usuario
 	public static final String TITULO_DIALOGO_USUARIO = "Usuario";
+	//constantes BarraHerramientasUsuario
+	public static final String BTN_COMPRAR_LIBRO = "Comprar Libro";
+	// constates BarraHerramientaAdministrador
+	public static final String BTN_CREAR_NUEVO_LIBRO = "Nuevo";
+	public static final String BTN_ACTUALIZAR_LIBRO = "Acualizar";
+	public static final String BTN_EDITAR_LIBRO = "Editar";
+	public static final String BTN_ELIMINAR_LIBRO = "Eliminar";
+	public static final String LBL_BUSCAR_LIBRO = "Buscar";
+	public static final String BTN_BUSCAR_LIBRO = "Buscar";
+	
 
 }

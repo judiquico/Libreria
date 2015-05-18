@@ -14,6 +14,7 @@ public class Controlador implements ActionListener {
 	
 	public static final String AC_BTN_USUARIO = "BOTON ENTRAR POR USUARIO";
 	public static final String AC_BTN_ADMINISTRADOR = "BOTON ENTRAR POR ADMINISTRADOR";
+	public static final String AC_BTN_COMPRAR_LIBRO = "ACCION COMPRAR LIBRO";
 	private VentanaPrincipal ventanaPrincipal;
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
@@ -36,8 +37,6 @@ public class Controlador implements ActionListener {
 		default:
 			break;
 		}
-
-//		
 	}
 	
 	public static void main(String[] args) {
