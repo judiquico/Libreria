@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JDialog;
 
 import vista.DialogoAdministrador;
+import vista.DialogoCrearLibro;
 import vista.DialogoUsuario;
 import vista.VentanaInicio;
 import vista.VentanaPrincipal;
@@ -15,6 +16,7 @@ public class Controlador implements ActionListener {
 	public static final String AC_BTN_USUARIO = "BOTON ENTRAR POR USUARIO";
 	public static final String AC_BTN_ADMINISTRADOR = "BOTON ENTRAR POR ADMINISTRADOR";
 	public static final String AC_BTN_COMPRAR_LIBRO = "ACCION COMPRAR LIBRO";
+	public static final String AC_MOSTRAR_DIALOGO_CREAR_LIBRO = "DIALOGO CREAR NUEVO LIBRO";
 	private VentanaPrincipal ventanaPrincipal;
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
@@ -34,8 +36,10 @@ public class Controlador implements ActionListener {
 		case AC_BTN_ADMINISTRADOR:
 			dialogoAdministrador.setVisible(true);
 			System.out.println("Administrador");
-		default:
 			break;
+		case AC_MOSTRAR_DIALOGO_CREAR_LIBRO:
+		DialogoCrearLibro dcl= new DialogoCrearLibro();	
+		dcl.setVisible(true);
 		}
 	}
 	

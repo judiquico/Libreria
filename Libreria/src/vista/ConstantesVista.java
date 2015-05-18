@@ -1,5 +1,7 @@
 package vista;
 
+import javax.swing.Icon;
+
 public class ConstantesVista {
 
 	public static final String TITULO = "Libreria Online V1.0";
@@ -36,6 +38,9 @@ public class ConstantesVista {
 	public static final String BTN_ELIMINAR_LIBRO = "Eliminar";
 	public static final String LBL_BUSCAR_LIBRO = "Buscar";
 	public static final String BTN_BUSCAR_LIBRO = "Buscar";
+	public static final String RADIO_BUSCAR_ID = "Buscar por ID";
+	public static final String RADIO_BUSCAR_TITULO = "Buscar por Titulo";
+	public static final String RADIO_BUSCAR_AUTOR = "Buscar por Autor";
 	
 
 }
