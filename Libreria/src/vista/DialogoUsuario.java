@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import controlador.Controlador;
 import modelo.Genero;
 
 public class DialogoUsuario extends JDialog {
@@ -29,16 +30,15 @@ public class DialogoUsuario extends JDialog {
 	private JComboBox<Genero> comboBox;
 	private BarraHerramientasUsuario usuario;
 	
-	public DialogoUsuario() {
+	public DialogoUsuario(Controlador controlador) {
 		setFont(new Font("Dialog", Font.PLAIN, 16));
 		setTitle("Usuario");
+		setSize(600, 450);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				DialogoUsuario.class.getResource("/imagenes/iconoUsuario.png")));
-		setResizable(false);
-		setBounds(100, 100, 400, 243);
 		getContentPane().setLayout(new BorderLayout());
 		panelCentral = new JPanel();
-		usuario = new BarraHerramientasUsuario();
+		usuario = new BarraHerramientasUsuario(controlador);
 		add(usuario, BorderLayout.NORTH);
 		
 		panelCentral.setBackground(new Color(204, 204, 255));

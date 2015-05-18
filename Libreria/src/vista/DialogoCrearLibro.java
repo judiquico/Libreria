@@ -15,23 +15,20 @@ import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import controlador.Controlador;
 import modelo.Genero;
 
 public class DialogoCrearLibro  extends JDialog {
-	/*
-	 * @autor Ruth Rojas
-	 */
 
-	
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JPanel panel_1;
-	private JButton btnConfirmar;
+	private JButton btnAñadir;
 	private JButton btnCancelar;
 	
-	public DialogoCrearLibro() {
+	public DialogoCrearLibro(Controlador controlador) {
 		setResizable(false);
 		setFont(new Font("Dialog", Font.PLAIN, 16));
 		setTitle(ConstantesVista.TITULO_DIALOGO_ADMINISTRADOR);
@@ -102,11 +99,15 @@ public class DialogoCrearLibro  extends JDialog {
 		panel.add(this.panel_1);
 		this.panel_1.setLayout(null);
 		
-		this.btnConfirmar = new JButton("Confirmar");
-		this.btnConfirmar.setBounds(210, 12, 98, 26);
-		this.panel_1.add(this.btnConfirmar);
+		this.btnAñadir = new JButton(ConstantesVista.BTN_CONFIRMAR_NUEVO_LIBRO);
+		btnAñadir.addActionListener(controlador);
+		btnAñadir.setActionCommand(Controlador.AC_CONFIRM_CREAR_LIBRO);
+		this.btnAñadir.setBounds(210, 12, 98, 26);
+		this.panel_1.add(this.btnAñadir);
 		
-		this.btnCancelar = new JButton("Cancelar");
+		this.btnCancelar = new JButton(ConstantesVista.BTN_CANCELAR_DIALOGO);
+		btnCancelar.addActionListener(controlador);
+		btnCancelar.setActionCommand(Controlador.AC_BTN_CANCELAR_DIALOGO);
 		this.btnCancelar.setBounds(320, 12, 98, 26);
 		this.panel_1.add(this.btnCancelar);
 		
