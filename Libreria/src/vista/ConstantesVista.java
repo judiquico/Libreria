@@ -1,8 +1,5 @@
 package vista;
 
-import javax.swing.Icon;
-
-
 public class ConstantesVista {
 
 	public static final String TITULO = "Libreria Online V1.0";
