@@ -10,7 +10,6 @@ import javax.swing.JMenuItem;
 import java.awt.Toolkit;
 
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import java.awt.GridBagLayout;
@@ -23,10 +22,18 @@ import javax.swing.GroupLayout.Alignment;
 import controlador.Controlador;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.GridLayout;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
+import javax.swing.SwingConstants;
 
 public class VentanaPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	private JTable table;
 
 	public VentanaPrincipal(Controlador controlador) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/imagenes/iconoLibreria.png")));
@@ -68,15 +75,39 @@ public class VentanaPrincipal extends JFrame {
 		mnAyuda.add(mntmAcercaDe);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(240, 255, 240));
+		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
 		getContentPane().add(panel, BorderLayout.NORTH);
 		
 		JButton btnUsuario = new JButton("Usuario");
+		btnUsuario.setBackground(new Color(204, 204, 255));
+		btnUsuario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnUsuario.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/imagenes/iconoUsuario.png")));
 		panel.add(btnUsuario);
 		
 		JButton btnAdministrador = new JButton("Administrador");
+		btnAdministrador.setBackground(new Color(255, 204, 204));
+		btnAdministrador.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/imagenes/iconoAdministrador.png")));
 		panel.add(btnAdministrador);
 		
 		JButton btnEstadisticas = new JButton("Estadisticas");
+		btnEstadisticas.setBackground(new Color(204, 255, 153));
+		btnEstadisticas.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/imagenes/iconoEstadisticas.png")));
 		panel.add(btnEstadisticas);
+		
+		JPanel panel_1 = new JPanel();
+		getContentPane().add(panel_1, BorderLayout.CENTER);
+		panel_1.setLayout(new GridLayout(1, 1, 0, 0));
+		
+		this.table = new JTable();
+		this.table.setBackground(new Color(255, 255, 204));
+		this.table.setModel(new DefaultTableModel(new Object[][] {},new String[] {
+				"Id", "Libro", "Autor", "Categoria", "Descripcion", "Valor"
+			}
+		));
+		panel_1.add(this.table);
 	}
 }

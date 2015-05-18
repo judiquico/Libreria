@@ -2,21 +2,19 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import modelo.Genero;
-import java.awt.Toolkit;
-import java.awt.Window.Type;
-import java.awt.Dialog.ModalityType;
 import java.awt.Font;
-import java.awt.Dialog.ModalExclusionType;
+import java.awt.Toolkit;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import modelo.Genero;
 
 public class DialogoUsuario extends JDialog {
 
