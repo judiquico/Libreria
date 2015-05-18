@@ -50,7 +50,10 @@ public class VentanaInicio extends JFrame {
 		btnUsuario = new JButton(ConstantesVista.BTN_USUARIO);
 		btnUsuario.addActionListener(controlador);
 		btnUsuario.setActionCommand(Controlador.AC_BTN_USUARIO);
+		
 		btnAdministrador = new JButton(ConstantesVista.BTN_ADMINISTRADOR);
+		btnAdministrador.addActionListener(controlador);
+		btnAdministrador.setActionCommand(Controlador.AC_BTN_ADMINISTRADOR);
 		panelAcceso = new JPanel();
 		panelAcceso.add(labelInfo);
 		panelAcceso.add(btnUsuario);

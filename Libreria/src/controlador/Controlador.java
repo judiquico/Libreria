@@ -7,43 +7,42 @@ import javax.swing.JDialog;
 
 import vista.DialogoAdministrador;
 import vista.DialogoUsuario;
+import vista.VentanaInicio;
 import vista.VentanaPrincipal;
 
 public class Controlador implements ActionListener {
 	
-	public static final String AC_BTN_USUARIO = "btn Usuario";
+	public static final String AC_BTN_USUARIO = "BOTON ENTRAR POR USUARIO";
+	public static final String AC_BTN_ADMINISTRADOR = "BOTON ENTRAR POR ADMINISTRADOR";
 	private VentanaPrincipal ventanaPrincipal;
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	
 	public Controlador() {
-		
+		dialogoAdministrador = new DialogoAdministrador();
+		dialogoUsuario = new DialogoUsuario();
 	}
-
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		switch (key) {
-//		case value:
-//			
-//			break;
-//
-//		default:
-//			break;
-//		}
+		switch (e.getActionCommand()) {
+		case AC_BTN_USUARIO:
+			System.out.println("hola");
+			dialogoUsuario.setVisible(true);
+			break;
+		case AC_BTN_ADMINISTRADOR:
+			dialogoAdministrador.setVisible(true);
+			System.out.println("Administrador");
+		default:
+			break;
+		}
+
 //		
 	}
 	
 	public static void main(String[] args) {
-		VentanaPrincipal vt = new VentanaPrincipal(null);
-		vt.setVisible(true);
-		DialogoUsuario dialog = new DialogoUsuario();
-		dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		dialog.setVisible(true);
-		DialogoAdministrador dialog1 = new DialogoAdministrador();
-		dialog1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		dialog1.setVisible(true);
+		VentanaInicio ventanaInicio = new VentanaInicio();
+		ventanaInicio.setVisible(true);
 
 	}
 
