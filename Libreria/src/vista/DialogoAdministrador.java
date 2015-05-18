@@ -18,6 +18,7 @@ import modelo.Genero;
 
 import java.awt.Font;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
 
 public class DialogoAdministrador extends JDialog {
 
@@ -26,6 +27,9 @@ public class DialogoAdministrador extends JDialog {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private JPanel panel_1;
+	private JButton btnConfirmar;
+	private JButton btnCancelar;
 
 	public DialogoAdministrador() {
 		setResizable(false);
@@ -37,10 +41,11 @@ public class DialogoAdministrador extends JDialog {
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 204, 204));
 		getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblNombreLibro = new JLabel("Nombre");
+		JLabel lblNombreLibro = new JLabel("Libro");
 		lblNombreLibro.setBounds(44, 22, 82, 14);
 		panel.add(lblNombreLibro);
 		
@@ -67,10 +72,6 @@ public class DialogoAdministrador extends JDialog {
 		comboBox.setBounds(136, 147, 210, 20);
 		panel.add(comboBox);
 		
-		JButton btnConfirmar = new JButton(ConstantesVista.BTN_CONFIRMAR);
-		btnConfirmar.setBounds(206, 326, 103, 23);
-		panel.add(btnConfirmar);
-		
 		JLabel lblDescripcion = new JLabel("Descripcion");
 		lblDescripcion.setBounds(44, 252, 82, 14);
 		panel.add(lblDescripcion);
@@ -96,9 +97,19 @@ public class DialogoAdministrador extends JDialog {
 		panel.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Cancelar");
-		btnNewButton.setBounds(330, 325, 98, 24);
-		panel.add(btnNewButton);
+		this.panel_1 = new JPanel();
+		this.panel_1.setBackground(new Color(204, 204, 255));
+		this.panel_1.setBounds(0, 324, 450, 47);
+		panel.add(this.panel_1);
+		this.panel_1.setLayout(null);
+		
+		this.btnConfirmar = new JButton("Confirmar");
+		this.btnConfirmar.setBounds(210, 12, 98, 26);
+		this.panel_1.add(this.btnConfirmar);
+		
+		this.btnCancelar = new JButton("Cancelar");
+		this.btnCancelar.setBounds(320, 12, 98, 26);
+		this.panel_1.add(this.btnCancelar);
 		
 
 	}
