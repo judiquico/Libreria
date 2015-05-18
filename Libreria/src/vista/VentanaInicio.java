@@ -1,7 +1,6 @@
 package vista;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
@@ -46,7 +45,6 @@ public class VentanaInicio extends JFrame {
 		
 		panelBienvenida = new JPanel();
 		this.add(panelBienvenida, BorderLayout.NORTH);
-		panelBienvenida.setBackground(Color.BLUE);
 		
 		labelInfo = new JLabel(ConstantesVista.L_LABEL_INFO);
 		btnUsuario = new JButton(ConstantesVista.BTN_USUARIO);

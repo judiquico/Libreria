@@ -15,6 +15,10 @@ public class Libreria {
 		this.direccion = direccion;
 		this.usuario = usuario;
 	}
+	
+	public void agregarLibro (){
+		
+	}
 
 	public String getNombre() {
 		return nombre;

@@ -11,6 +11,7 @@ import vista.VentanaPrincipal;
 
 public class Controlador implements ActionListener {
 	
+	public static final String AC_BTN_USUARIO = "btn Usuario";
 	private VentanaPrincipal ventanaPrincipal;
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
@@ -35,7 +36,7 @@ public class Controlador implements ActionListener {
 	}
 	
 	public static void main(String[] args) {
-		VentanaPrincipal vt = new VentanaPrincipal();
+		VentanaPrincipal vt = new VentanaPrincipal(null);
 		vt.setVisible(true);
 		DialogoUsuario dialog = new DialogoUsuario();
 		dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);

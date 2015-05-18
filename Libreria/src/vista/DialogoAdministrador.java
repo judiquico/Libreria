@@ -1,19 +1,23 @@
 package vista;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+
 import java.awt.Toolkit;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
-import javax.swing.JTable;
-import javax.swing.JTextPane;
 import javax.swing.JSpinner;
+
+import modelo.Genero;
+
+import java.awt.Font;
+import javax.swing.DefaultComboBoxModel;
 
 public class DialogoAdministrador extends JDialog {
 
@@ -24,7 +28,9 @@ public class DialogoAdministrador extends JDialog {
 	private JTextField textField_2;
 
 	public DialogoAdministrador() {
-		setTitle("Administrador");
+		setResizable(false);
+		setFont(new Font("Dialog", Font.PLAIN, 16));
+		setTitle(ConstantesVista.TITULO_DIALOGO_ADMINISTRADOR);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoAdministrador.class.getResource("/imagenes/iconoAdministrador.png")));
 		setSize(456, 400);
 		setLocationRelativeTo(null);
@@ -56,16 +62,17 @@ public class DialogoAdministrador extends JDialog {
 		lblCategoria.setBounds(44, 153, 67, 14);
 		panel.add(lblCategoria);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(318, 147, 28, 20);
+		JComboBox<Genero> comboBox = new JComboBox<Genero>();
+		comboBox.setModel(new DefaultComboBoxModel<Genero>(Genero.values()));
+		comboBox.setBounds(136, 147, 210, 20);
 		panel.add(comboBox);
 		
-		JButton btnConfirmar = new JButton("Agregar");
-		btnConfirmar.setBounds(341, 327, 89, 23);
+		JButton btnConfirmar = new JButton(ConstantesVista.BTN_CONFIRMAR);
+		btnConfirmar.setBounds(206, 326, 103, 23);
 		panel.add(btnConfirmar);
 		
 		JLabel lblDescripcion = new JLabel("Descripcion");
-		lblDescripcion.setBounds(44, 252, 67, 14);
+		lblDescripcion.setBounds(44, 252, 82, 14);
 		panel.add(lblDescripcion);
 		
 		JTextArea textArea = new JTextArea();
@@ -77,7 +84,7 @@ public class DialogoAdministrador extends JDialog {
 		panel.add(lblId);
 		
 		JSpinner spinner = new JSpinner();
-		spinner.setBounds(292, 106, 54, 20);
+		spinner.setBounds(136, 106, 210, 20);
 		panel.add(spinner);
 		
 		JLabel lblValor = new JLabel("Valor");
@@ -88,6 +95,10 @@ public class DialogoAdministrador extends JDialog {
 		textField_2.setBounds(136, 200, 201, 20);
 		panel.add(textField_2);
 		textField_2.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Cancelar");
+		btnNewButton.setBounds(330, 325, 98, 24);
+		panel.add(btnNewButton);
 		
 
 	}

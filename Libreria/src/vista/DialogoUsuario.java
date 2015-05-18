@@ -6,68 +6,82 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import modelo.Genero;
 import java.awt.Toolkit;
-import java.awt.TextField;
-import javax.swing.JTable;
-import java.awt.Scrollbar;
-import javax.swing.JCheckBox;
+import java.awt.Window.Type;
+import java.awt.Dialog.ModalityType;
+import java.awt.Font;
+import java.awt.Dialog.ModalExclusionType;
 
 public class DialogoUsuario extends JDialog {
 
 	private static final long serialVersionUID = 1L;
-	private JTable table;
+	private final JPanel contentPanel = new JPanel();
+	private JTextField textField;
+	private JTextField textField_1;
+	private JLabel lblLibro;
+	private JLabel lblAutor;
+	private JLabel lblGenero;
+	private JComboBox<Genero> comboBox;
 
-
-
+	
 	public DialogoUsuario() {
-		setTitle("Usuario\r\n");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				DialogoUsuario.class.getResource("/imagenes/iconoUsuario.png")));
-		setLayout(new BorderLayout());
-		setSize(584, 358);
-		setLocationRelativeTo(null);
-
-		JPanel panel = new JPanel();
-		add(panel, BorderLayout.SOUTH);
-
-		JButton btnNewButton = new JButton("Cancelar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		setFont(new Font("Dialog", Font.PLAIN, 16));
+		setTitle("Usuario");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoUsuario.class.getResource("/imagenes/iconoUsuario.png")));
+		setResizable(false);
+		setBounds(100, 100, 400, 243);
+		getContentPane().setLayout(new BorderLayout());
+		this.contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(this.contentPanel, BorderLayout.CENTER);
+		this.contentPanel.setLayout(null);
+		
+		this.textField = new JTextField();
+		this.textField.setBounds(124, 73, 203, 20);
+		this.contentPanel.add(this.textField);
+		this.textField.setColumns(10);
+		
+		this.textField_1 = new JTextField();
+		this.textField_1.setColumns(10);
+		this.textField_1.setBounds(124, 27, 203, 20);
+		this.contentPanel.add(this.textField_1);
+		
+		this.lblLibro = new JLabel("Libro");
+		this.lblLibro.setBounds(40, 27, 46, 17);
+		this.contentPanel.add(this.lblLibro);
+		
+		this.lblAutor = new JLabel("Autor\r\n");
+		this.lblAutor.setBounds(40, 76, 46, 17);
+		this.contentPanel.add(this.lblAutor);
+		
+		this.lblGenero = new JLabel("Genero");
+		this.lblGenero.setBounds(40, 118, 46, 17);
+		this.contentPanel.add(this.lblGenero);
+		
+		this.comboBox = new JComboBox<Genero>();
+		this.comboBox.setModel(new DefaultComboBoxModel<Genero>(Genero.values()));
+		this.comboBox.setBounds(118, 116, 209, 20);
+		this.contentPanel.add(this.comboBox);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
 			}
-		});
-		panel.add(btnNewButton);
-
-		JButton btnConfirmar = new JButton("Confirmar");
-		panel.add(btnConfirmar);
-
-		JPanel panel_1 = new JPanel();
-		add(panel_1, BorderLayout.NORTH);
-		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-
-		JButton btnNewButton_1 = new JButton("Buscar");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
 			}
-		});
-		panel_1.add(btnNewButton_1);
-
-		TextField textField = new TextField(20);
-		panel_1.add(textField);
-
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Autor");
-		panel_1.add(chckbxNewCheckBox);
-
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Libro");
-		panel_1.add(chckbxNewCheckBox_1);
-
-		table = new JTable();
-		getContentPane().add(table, BorderLayout.CENTER);
-
-		Scrollbar scrollbar = new Scrollbar();
-		getContentPane().add(scrollbar, BorderLayout.EAST);
-
+		}
 	}
-
 }
