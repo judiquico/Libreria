@@ -41,5 +41,13 @@ public class ConstantesVista {
 	public static final String RADIO_BUSCAR_AUTOR = "Buscar por Autor";
 	public static final String BTN_CONFIRMAR_NUEVO_LIBRO = "Crear";
 	public static final String BTN_CANCELAR_DIALOGO = "Cancelar";
+	public static final String LBL_TITULO_LIBRO = "Libro";
+	//constantes dialogoCrear
+	public static final String LBL_AUTOR = "Autor";
+	public static final String LBL_CATEGORIA = "Categoria";
+	public static final String LBL_DESCRIPCION = "Descripcion";
+	public static final String LBL_ID = "ID";
+	public static final String LBL_VALOR = "Valor";
+	
 
 }

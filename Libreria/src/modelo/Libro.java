@@ -10,8 +10,8 @@ public class Libro {
 	private double valor;
 	private Genero generoLibro;
 
-	public Libro(int idLibro,String titulo,  Autor autor, String descripcion, int ejemplaresVendidos,
-			 double valor, Genero generoLibro) {
+	public Libro(String titulo,  Autor autor, String descripcion,
+			 double valor) {
 		super();
 		this.autor = autor;
 		this.descripcion = descripcion;
@@ -19,7 +19,6 @@ public class Libro {
 		this.idLibro = idLibro;
 		this.titulo = titulo;
 		this.valor = valor;
-		this.generoLibro = generoLibro;
 	}
 
 	public Autor getAutor() {

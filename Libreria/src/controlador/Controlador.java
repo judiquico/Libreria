@@ -3,12 +3,18 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import modelo.Libro;
+import modelo.dao.GestorLibros;
 import vista.DialogoAdministrador;
 import vista.DialogoCrearLibro;
 import vista.DialogoUsuario;
+import vista.PanelTable;
 import vista.VentanaInicio;
 
-public class Controlador implements ActionListener {
+public class Controlador implements ActionListener, ListSelectionListener {
 
 	public static final String AC_BTN_USUARIO = "BOTON ENTRAR POR USUARIO";
 	public static final String AC_BTN_ADMINISTRADOR = "BOTON ENTRAR POR ADMINISTRADOR";
@@ -19,29 +25,31 @@ public class Controlador implements ActionListener {
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	private DialogoCrearLibro dialogoCrearLibro;
+	private GestorLibros gestor;
+	private PanelTable panelTable;
 
 	public Controlador() {
 		dialogoAdministrador = new DialogoAdministrador(this);
 		dialogoUsuario = new DialogoUsuario(this);
 		dialogoCrearLibro = new DialogoCrearLibro(this);
+		panelTable = new PanelTable(this);
+		gestor = new GestorLibros();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
 		case AC_BTN_USUARIO:
-			System.out.println("hola");
 			dialogoUsuario.setVisible(true);
 			break;
 		case AC_BTN_ADMINISTRADOR:
 			dialogoAdministrador.setVisible(true);
-			System.out.println("Administrador");
 			break;
 		case AC_MOSTRAR_DIALOGO_CREAR_LIBRO:
 			dialogoCrearLibro.setVisible(true);
 			break;
 		case AC_CONFIRM_CREAR_LIBRO:
-			System.out.println("la cogio");
+			agregarNuevoLibro();
 			break;
 		case AC_BTN_CANCELAR_DIALOGO:
 			dialogoCrearLibro.dispose();
@@ -51,5 +59,20 @@ public class Controlador implements ActionListener {
 	public static void main(String[] args) {
 		VentanaInicio ventanaInicio = new VentanaInicio();
 		ventanaInicio.setVisible(true);
+	}
+	public void agregarNuevoLibro(){
+		Libro libro = dialogoCrearLibro.crearLibro();
+		if (libro != null) {
+			gestor.agregarLibro(libro);
+			panelTable.addLibro(libro);
+			dialogoCrearLibro.dispose();
+			System.out.println(libro);
+		}
+	}
+
+	@Override
+	public void valueChanged(ListSelectionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
