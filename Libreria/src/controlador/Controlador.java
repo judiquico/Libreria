@@ -12,7 +12,7 @@ import vista.DialogoAdministrador;
 import vista.DialogoCrearLibro;
 import vista.DialogoUsuario;
 import vista.PanelTable;
-import vista.VentanaInicio;
+import vista.VentanaPrincipal;
 
 public class Controlador implements ActionListener, ListSelectionListener {
 
@@ -56,10 +56,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		}
 	}
 
-	public static void main(String[] args) {
-		VentanaInicio ventanaInicio = new VentanaInicio();
-		ventanaInicio.setVisible(true);
-	}
+	
 	public void agregarNuevoLibro(){
 		Libro libro = dialogoCrearLibro.crearLibro();
 		if (libro != null) {
@@ -74,5 +71,10 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public void valueChanged(ListSelectionEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public static void main(String[] args) {
+		VentanaPrincipal vt = new VentanaPrincipal();
+		vt.setVisible(true);
 	}
 }

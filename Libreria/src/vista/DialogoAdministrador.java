@@ -6,6 +6,8 @@ import java.awt.BorderLayout;
 import javax.swing.JDialog;
 
 import controlador.Controlador;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
 
 public class DialogoAdministrador extends JDialog {
 
@@ -14,10 +16,13 @@ public class DialogoAdministrador extends JDialog {
 	private PanelTable panelTable;
 	
 		public DialogoAdministrador(Controlador controlador) {
+			setTitle(ConstantesVista.TITULO_DIALOGO_ADMINISTRADOR);
+			setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoAdministrador.class.getResource("/imagenes/iconoAdministrador.png")));
 			setSize(800, 500);
 			admin = new BarraHerramientasAdministrador(controlador);
 			panelTable = new PanelTable(controlador);
-			add(panelTable, BorderLayout.CENTER);
-			add(admin, BorderLayout.NORTH);
+			getContentPane().add(panelTable, BorderLayout.CENTER);
+			this.panelTable.setLayout(new GridLayout(1, 0, 0, 0));
+			getContentPane().add(admin, BorderLayout.NORTH);
 		}
 }

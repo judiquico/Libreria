@@ -1,6 +1,5 @@
 package modelo.util;
 
-import java.util.Vector;
 
 import modelo.Libro;
 

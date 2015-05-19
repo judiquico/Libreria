@@ -3,7 +3,6 @@ package modelo.dao;
 import java.util.ArrayList;
 
 import modelo.Autor;
-import modelo.Genero;
 import modelo.Libro;
 import modelo.util.Util;
 

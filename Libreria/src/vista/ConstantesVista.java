@@ -2,7 +2,7 @@ package vista;
 
 public class ConstantesVista {
 
-	public static final String TITULO = "Libreria Online V1.0";
+	public static final String TITULO = "Libreria";
 	public static final int ANCHO_VENTANA = 600;
 	public static final int ALTO_VENTANA = 500;
 	public static final int ANCHO_DIALOGO = 600;
