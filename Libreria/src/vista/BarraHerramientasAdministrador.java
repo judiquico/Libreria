@@ -36,25 +36,46 @@ public class BarraHerramientasAdministrador extends JToolBar {
 		add(btnActualizar);
 		btnEditar = new JButton(ConstantesVista.BTN_EDITAR_LIBRO);
 		add(btnEditar);
+		
 		btnEliminar = new JButton(ConstantesVista.BTN_ELIMINAR_LIBRO);
+		btnEliminar.addActionListener(controlador);
+		btnEliminar.setActionCommand(Controlador.AC_BTN_ELIMINAR_LIBRO);
 		add(btnEliminar);
+		
 		addSeparator();
 		labelBuscar = new JLabel(ConstantesVista.LBL_BUSCAR_LIBRO);
 		add(labelBuscar);
+		
 		radioId = new JRadioButton(ConstantesVista.RADIO_BUSCAR_ID);
+		radioId.addActionListener(controlador);
+		radioId.setActionCommand(Controlador.AC_RDBTN_BUSCAR_ID_ADMIISTRADOR);
 		add(radioId);
 		grupoBuscar = new ButtonGroup();
 		grupoBuscar.add(radioId);
+		
 		radioBuscarTitulo = new JRadioButton(ConstantesVista.RADIO_BUSCAR_TITULO);
+		radioBuscarTitulo.addActionListener(controlador);
+		radioBuscarTitulo.setActionCommand(Controlador.AC_RDBTN_USCAR_TITULO_ADMINSTRADOR);
 		add(radioBuscarTitulo);
 		grupoBuscar.add(radioBuscarTitulo);
+		
 		radioAutor = new JRadioButton(ConstantesVista.RADIO_BUSCAR_AUTOR);
+		radioAutor.addActionListener(controlador);
+		radioAutor.setActionCommand(Controlador.AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR);
 		add(radioAutor);
 		grupoBuscar.add(radioAutor);
 		textBuscar = new JTextField();
 		add(textBuscar);
 		btnBuscar = new JButton(ConstantesVista.BTN_BUSCAR_LIBRO);
 		add(btnBuscar);
+	}
+
+	public JTextField getTextBuscar() {
+		return textBuscar;
+	}
+
+	public void setTextBuscar(JTextField textBuscar) {
+		this.textBuscar = textBuscar;
 	}
 	
 }

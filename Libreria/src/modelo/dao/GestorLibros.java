@@ -26,4 +26,26 @@ public class GestorLibros {
 		listaLibros.add(libro);
 	}
 
+	public Libro libro(int id){
+		for (Libro libro : listaLibros) {
+			if (libro.getIdLibro()== id) {
+				return libro;
+			}
+		}
+		return null;
+	}
+	public void borrarLibro(Libro libro){
+		listaLibros.remove(libro);
+	}
+
+	public Libro buscarLibro(int id) {
+		for (Libro libro : listaLibros) {
+			if (libro.getIdLibro() == id) {
+				return libro;
+			}
+		}
+		return null;
+	}
+
+
 }

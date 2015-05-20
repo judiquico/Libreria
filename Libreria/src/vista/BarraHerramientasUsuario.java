@@ -28,12 +28,19 @@ public class BarraHerramientasUsuario extends JToolBar {
 		labelBuscar = new JLabel(ConstantesVista.LBL_BUSCAR_LIBRO);
 		add(labelBuscar);
 		grupoBuscar = new ButtonGroup();
+		
 		radioBuscarTitulo = new JRadioButton(ConstantesVista.RADIO_BUSCAR_TITULO);
+		radioBuscarTitulo.addActionListener(controlador);
+		radioBuscarTitulo.setActionCommand(Controlador.AC_RDBTN_USCAR_TITULO_ADMINSTRADOR);
 		add(radioBuscarTitulo);
 		grupoBuscar.add(radioBuscarTitulo);
+		
 		radioAutor = new JRadioButton(ConstantesVista.RADIO_BUSCAR_AUTOR);
+		radioAutor.addActionListener(controlador);
+		radioAutor.setActionCommand(Controlador.AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR);
 		add(radioAutor);
 		grupoBuscar.add(radioAutor);
+		
 		textBuscar = new JTextField();
 		add(textBuscar);
 		btnBuscar = new JButton(ConstantesVista.BTN_BUSCAR_LIBRO);

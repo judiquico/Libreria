@@ -29,17 +29,20 @@ public class DialogoUsuario extends JDialog {
 	private JLabel lblGenero;
 	private JComboBox<Genero> comboBox;
 	private BarraHerramientasUsuario usuario;
+	private PanelTable panelTable;
 	
 	public DialogoUsuario(Controlador controlador) {
 		setFont(new Font("Dialog", Font.PLAIN, 16));
 		setTitle("Usuario");
-		setSize(600, 450);
+		setSize(600,ConstantesVista.ALTO_VENTANA);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				DialogoUsuario.class.getResource("/imagenes/iconoUsuario.png")));
 		getContentPane().setLayout(new BorderLayout());
 		panelCentral = new JPanel();
 		usuario = new BarraHerramientasUsuario(controlador);
 		add(usuario, BorderLayout.NORTH);
+		panelTable = new PanelTable(controlador);
+		add(panelTable, BorderLayout.WEST);
 		
 		panelCentral.setBackground(new Color(204, 204, 255));
 		panelCentral.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -78,13 +81,15 @@ public class DialogoUsuario extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("Confirmar");
-				okButton.setActionCommand("Confirmar");
+				JButton okButton = new JButton(ConstantesVista.BTN_CONFIRMAR_USUARIO);
+				okButton.addActionListener(controlador);
+				okButton.setActionCommand(Controlador.AC_BTN_CONFIRMAR_USUARIO);
 				buttonPane.add(okButton);
 			}
 			{
-				JButton cancelButton = new JButton("Cancelar");
-				cancelButton.setActionCommand("Cancelar");
+				JButton cancelButton = new JButton(ConstantesVista.BTN_CANCELAR);
+				cancelButton.addActionListener(controlador);
+				cancelButton.setActionCommand(Controlador.AC_BTN_CANCELAR_DIALOGO);
 				buttonPane.add(cancelButton);
 			}
 		}

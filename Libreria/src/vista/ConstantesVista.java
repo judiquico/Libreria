@@ -27,6 +27,8 @@ public class ConstantesVista {
 	public static final String BTN_CANCELAR = "Cancelar";
 	// Constantes Dialogo Usuario
 	public static final String TITULO_DIALOGO_USUARIO = "Usuario";
+	public static final String BTN_CONFIRMAR_USUARIO = "Confirmar";
+	
 	//constantes BarraHerramientasUsuario
 	public static final String BTN_COMPRAR_LIBRO = "Comprar Libro";
 	// constates BarraHerramientaAdministrador
@@ -48,6 +50,7 @@ public class ConstantesVista {
 	public static final String LBL_DESCRIPCION = "Descripcion";
 	public static final String LBL_ID = "ID";
 	public static final String LBL_VALOR = "Valor";
+
 	
 
 }

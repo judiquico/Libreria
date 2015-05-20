@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import controlador.Controlador;
 import modelo.Autor;
 import modelo.Genero;
+import modelo.Libro;
 import modelo.dao.GestorLibros;
 
 public class DialogoCrearLibro  extends JDialog {
@@ -116,9 +117,17 @@ public class DialogoCrearLibro  extends JDialog {
 		this.btnCancelar.setBounds(320, 12, 98, 26);
 		this.panel_1.add(this.btnCancelar);
 	}
+	
+	public void limpiarFormulario(){
+		textFieldId.setText("");
+		textFieldTitulo.setText("");
+		textFieldAutor.setText("");
+		textFieldValor.setText("");
+		textAreaDescripcion.setText("");
+	}
 
-	public modelo.Libro crearLibro() {
-		modelo.Libro libro = GestorLibros.crearLibro(textFieldTitulo.getText(),new Autor(textFieldAutor.getText()), textAreaDescripcion.getText(), textFieldValor.getText());
+	public Libro crearLibro() {
+		Libro libro = GestorLibros.crearLibro(textFieldTitulo.getText(),new Autor(textFieldAutor.getText()), textAreaDescripcion.getText(), textFieldValor.getText());
 		return libro;	
 	}
 }

@@ -20,6 +20,7 @@ public class Libro {
 		this.titulo = titulo;
 		this.valor = valor;
 	}
+	
 
 	public Autor getAutor() {
 		return autor;

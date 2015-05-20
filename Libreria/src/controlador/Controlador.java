@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -22,6 +23,11 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public static final String AC_MOSTRAR_DIALOGO_CREAR_LIBRO = "DIALOGO CREAR NUEVO LIBRO";
 	public static final String AC_CONFIRM_CREAR_LIBRO = "CREAR EL NUEVO LIBRO";
 	public static final String AC_BTN_CANCELAR_DIALOGO = "CERRAR EL DIALOGO";
+	public static final String AC_BTN_CONFIRMAR_USUARIO = "CONFIRMAR USUARIO";
+	public static final String AC_RDBTN_BUSCAR_ID_ADMIISTRADOR = "BUSCAR POR ID ADMINISTRADOR";
+	public static final String AC_RDBTN_USCAR_TITULO_ADMINSTRADOR = "BUSCAR POR TITULO EN ADMINISTRADOR";
+	public static final String AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR = "BUSCAR POR AUTOR EN ADMNISTRADOR";
+	public static final String AC_BTN_ELIMINAR_LIBRO = "ELIMINAR LIBRO";
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	private DialogoCrearLibro dialogoCrearLibro;
@@ -50,13 +56,33 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			break;
 		case AC_CONFIRM_CREAR_LIBRO:
 			agregarNuevoLibro();
+			dialogoCrearLibro.limpiarFormulario();
 			break;
 		case AC_BTN_CANCELAR_DIALOGO:
 			dialogoCrearLibro.dispose();
+		case AC_BTN_CONFIRMAR_USUARIO:
+			dialogoUsuario.dispose();
+			break;
+		case AC_RDBTN_BUSCAR_ID_ADMIISTRADOR:
+			System.out.println("ID");
+			panelTable.filtrarId();
+			break;
+		case AC_RDBTN_USCAR_TITULO_ADMINSTRADOR:
+			System.out.println("titulo");
+			panelTable.filtrarTitulo();
+			break;
+		case AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR:
+			System.out.println("autor");
+			panelTable.filtroAutor();
+			break;
+		case AC_BTN_ELIMINAR_LIBRO:
+			int confirmacion = JOptionPane.showConfirmDialog(panelTable, "Desea eliminar el registro de este Libro?");
+			if (confirmacion == JOptionPane.OK_OPTION) {
+				eliminarLibro();
+			}
 		}
 	}
 
-	
 	public void agregarNuevoLibro(){
 		Libro libro = dialogoCrearLibro.crearLibro();
 		if (libro != null) {
@@ -71,6 +97,10 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public void valueChanged(ListSelectionEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+	public void eliminarLibro(){
+		int id = panelTable.eliminarLibro();
+		gestor.borrarLibro(gestor.buscarLibro(id));
 	}
 	
 	public static void main(String[] args) {
