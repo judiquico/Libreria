@@ -30,6 +30,8 @@ public class DialogoUsuario extends JDialog {
 	private JComboBox<Genero> comboBox;
 	private BarraHerramientasUsuario usuario;
 	private PanelTable panelTable;
+	private JButton okButton;
+	private JButton cancelButton;
 	
 	public DialogoUsuario(Controlador controlador) {
 		setFont(new Font("Dialog", Font.PLAIN, 16));
@@ -58,15 +60,15 @@ public class DialogoUsuario extends JDialog {
 		this.textField_1.setBounds(124, 27, 203, 20);
 		this.panelCentral.add(this.textField_1);
 
-		this.lblLibro = new JLabel("Libro");
+		this.lblLibro = new JLabel();
 		this.lblLibro.setBounds(40, 27, 46, 17);
 		this.panelCentral.add(this.lblLibro);
 
-		this.lblAutor = new JLabel("Autor\r\n");
+		this.lblAutor = new JLabel();
 		this.lblAutor.setBounds(40, 76, 46, 17);
 		this.panelCentral.add(this.lblAutor);
 
-		this.lblGenero = new JLabel("Genero");
+		this.lblGenero = new JLabel();
 		this.lblGenero.setBounds(40, 118, 46, 17);
 		this.panelCentral.add(this.lblGenero);
 
@@ -81,17 +83,24 @@ public class DialogoUsuario extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton(ConstantesVista.BTN_CONFIRMAR_USUARIO);
+				okButton = new JButton();
 				okButton.addActionListener(controlador);
 				okButton.setActionCommand(Controlador.AC_BTN_CONFIRMAR_USUARIO);
 				buttonPane.add(okButton);
 			}
 			{
-				JButton cancelButton = new JButton(ConstantesVista.BTN_CANCELAR);
+				cancelButton = new JButton();
 				cancelButton.addActionListener(controlador);
 				cancelButton.setActionCommand(Controlador.AC_BTN_CANCELAR_DIALOGO);
 				buttonPane.add(cancelButton);
 			}
 		}
+	}
+	public void init(){
+		lblLibro.setText(ConstantesVista.LBL_USUARIO_LIBRO);
+		lblAutor.setText(ConstantesVista.LBL_USUARIO_AUTOR);
+		lblGenero.setText(ConstantesVista.LBL_USUARIO_GENERO);
+		okButton.setText(ConstantesVista.BTN_CONFIRMAR_USUARIO);
+		cancelButton.setText(ConstantesVista.BTN_CANCELAR);
 	}
 }

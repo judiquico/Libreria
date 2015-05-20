@@ -2,6 +2,9 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
@@ -28,11 +31,14 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public static final String AC_RDBTN_USCAR_TITULO_ADMINSTRADOR = "BUSCAR POR TITULO EN ADMINISTRADOR";
 	public static final String AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR = "BUSCAR POR AUTOR EN ADMNISTRADOR";
 	public static final String AC_BTN_ELIMINAR_LIBRO = "ELIMINAR LIBRO";
+	public static final String AC_BTN_CAMBIAR_A_ESPAÑOL = "CAMBIAR IDIOMA A ESPANOL";
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	private DialogoCrearLibro dialogoCrearLibro;
 	private GestorLibros gestor;
 	private PanelTable panelTable;
+	private Properties properties;
+	private VentanaPrincipal ventanaPrincipal;
 
 	public Controlador() {
 		dialogoAdministrador = new DialogoAdministrador(this);
@@ -40,6 +46,9 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		dialogoCrearLibro = new DialogoCrearLibro(this);
 		panelTable = new PanelTable(this);
 		gestor = new GestorLibros();
+		properties = new Properties();
+		cargarProperties("archivos_properties/espanol.pr");
+		
 	}
 
 	@Override
@@ -80,9 +89,10 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			if (confirmacion == JOptionPane.OK_OPTION) {
 				eliminarLibro();
 			}
+		case AC_BTN_CAMBIAR_A_ESPAÑOL:
+			actualizarIdiomaEspanol();
 		}
 	}
-
 	public void agregarNuevoLibro(){
 		Libro libro = dialogoCrearLibro.crearLibro();
 		if (libro != null) {
@@ -91,6 +101,13 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			dialogoCrearLibro.dispose();
 			System.out.println(libro);
 		}
+	}
+	private void actualizarIdiomaEspanol(){
+		cargarProperties("/archivos_properties/espanol.pr");
+		ventanaPrincipal.init();
+		dialogoAdministrador.init();
+		dialogoUsuario.init();
+		dialogoCrearLibro.init();
 	}
 
 	@Override
@@ -103,6 +120,17 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		gestor.borrarLibro(gestor.buscarLibro(id));
 	}
 	
+	public void cargarProperties(String archivo){
+		InputStream input = getClass().getClassLoader().getResourceAsStream(archivo);
+		if (input != null) {
+			try {
+				properties.load(input);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		VentanaPrincipal vt = new VentanaPrincipal();
 		vt.setVisible(true);

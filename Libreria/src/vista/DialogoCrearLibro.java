@@ -30,6 +30,12 @@ public class DialogoCrearLibro  extends JDialog {
 	private JPanel panel_1;
 	private JButton btnAñadir;
 	private JButton btnCancelar;
+	private JLabel lblId ;
+	private JLabel lblTituloLibro;
+	private JLabel labelAutor ;
+	private JLabel lblCategoria ;
+	private JLabel lblDescripcion ;
+	private JLabel lblValor;
 	JComboBox<Genero> comboBox ;
 	JTextArea textAreaDescripcion; 
 	
@@ -46,7 +52,7 @@ public class DialogoCrearLibro  extends JDialog {
 		getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblId = new JLabel(ConstantesVista.LBL_ID);
+		lblId = new JLabel();
 		lblId.setBounds(44, 109, 46, 14);
 		panel.add(lblId);
 		
@@ -54,7 +60,7 @@ public class DialogoCrearLibro  extends JDialog {
 		textFieldId.setBounds(136, 106, 210, 20);
 		panel.add(textFieldId);
 		
-		JLabel lblTituloLibro = new JLabel(ConstantesVista.LBL_TITULO_LIBRO);
+		lblTituloLibro = new JLabel();
 		lblTituloLibro.setBounds(44, 22, 82, 14);
 		panel.add(lblTituloLibro);
 		
@@ -63,16 +69,16 @@ public class DialogoCrearLibro  extends JDialog {
 		panel.add(textFieldTitulo);
 		textFieldTitulo.setColumns(10);
 		
-		JLabel label = new JLabel(ConstantesVista.LBL_AUTOR);
-		label.setBounds(44, 66, 54, 14);
-		panel.add(label);
+		labelAutor = new JLabel();
+		labelAutor.setBounds(44, 66, 54, 14);
+		panel.add(labelAutor);
 		
 		textFieldAutor = new JTextField();
 		textFieldAutor.setBounds(136, 63, 201, 20);
 		panel.add(textFieldAutor);
 		textFieldAutor.setColumns(10);
 		
-		JLabel lblCategoria = new JLabel(ConstantesVista.LBL_CATEGORIA);
+		lblCategoria = new JLabel();
 		lblCategoria.setBounds(44, 153, 67, 14);
 		panel.add(lblCategoria);
 		
@@ -81,7 +87,7 @@ public class DialogoCrearLibro  extends JDialog {
 		comboBox.setBounds(136, 147, 210, 20);
 		panel.add(comboBox);
 		
-		JLabel lblDescripcion = new JLabel(ConstantesVista.LBL_DESCRIPCION);
+		lblDescripcion = new JLabel();
 		lblDescripcion.setBounds(44, 252, 82, 14);
 		panel.add(lblDescripcion);
 		
@@ -90,7 +96,7 @@ public class DialogoCrearLibro  extends JDialog {
 		panel.add(textAreaDescripcion);
 		
 		
-		JLabel lblValor = new JLabel(ConstantesVista.LBL_VALOR);
+		lblValor = new JLabel();
 		lblValor.setBounds(52, 203, 46, 14);
 		panel.add(lblValor);
 		
@@ -105,13 +111,13 @@ public class DialogoCrearLibro  extends JDialog {
 		panel.add(this.panel_1);
 		this.panel_1.setLayout(null);
 		
-		this.btnAñadir = new JButton(ConstantesVista.BTN_CONFIRMAR_NUEVO_LIBRO);
+		this.btnAñadir = new JButton();
 		btnAñadir.addActionListener(controlador);
 		btnAñadir.setActionCommand(Controlador.AC_CONFIRM_CREAR_LIBRO);
 		this.btnAñadir.setBounds(210, 12, 98, 26);
 		this.panel_1.add(this.btnAñadir);
 		
-		this.btnCancelar = new JButton(ConstantesVista.BTN_CANCELAR_DIALOGO);
+		this.btnCancelar = new JButton();
 		btnCancelar.addActionListener(controlador);
 		btnCancelar.setActionCommand(Controlador.AC_BTN_CANCELAR_DIALOGO);
 		this.btnCancelar.setBounds(320, 12, 98, 26);
@@ -129,5 +135,15 @@ public class DialogoCrearLibro  extends JDialog {
 	public Libro crearLibro() {
 		Libro libro = GestorLibros.crearLibro(textFieldTitulo.getText(),new Autor(textFieldAutor.getText()), textAreaDescripcion.getText(), textFieldValor.getText());
 		return libro;	
+	}
+	public void init(){
+		lblId.setText(ConstantesVista.LBL_ID);
+		lblTituloLibro.setText(ConstantesVista.LBL_TITULO_LIBRO);
+		labelAutor.setText(ConstantesVista.LBL_AUTOR);
+		lblCategoria.setText(ConstantesVista.LBL_CATEGORIA);
+		lblDescripcion.setText(ConstantesVista.LBL_DESCRIPCION);
+		lblValor.setText(ConstantesVista.LBL_VALOR);
+		btnAñadir.setText(ConstantesVista.BTN_CONFIRMAR_NUEVO_LIBRO);
+		btnCancelar.setText(ConstantesVista.BTN_CANCELAR_DIALOGO);
 	}
 }

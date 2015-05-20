@@ -24,5 +24,9 @@ public class DialogoAdministrador extends JDialog {
 			getContentPane().add(panelTable, BorderLayout.CENTER);
 			this.panelTable.setLayout(new GridLayout(1, 0, 0, 0));
 			getContentPane().add(admin, BorderLayout.NORTH);
+			init();
+		}
+		public void init(){
+			admin.init();
 		}
 }

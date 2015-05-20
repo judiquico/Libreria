@@ -26,7 +26,21 @@ public class VentanaPrincipal extends JFrame {
 	private ImageIcon backgorund;
 	private JLabel lblImagen;
 	private Controlador controlador;
-
+	private JMenuItem itemImportar ;
+	private JMenuItem itemExportar ;
+	private JMenuItem itemSalir ;
+	private JMenuBar menuBar ;
+	private JMenu mnArchivo ;
+	private JMenu mnOpciones ;
+	private JMenu itemIdioma ;
+	private JMenuItem itemEspanol ;
+	private JMenuItem itemIngles ;
+	private JMenu mnAyuda;
+	private JMenuItem itemAcercaDe ;
+	private JPanel panel ;
+	private JButton btnUsuario ;
+	private JButton btnAdministrador ;
+	
 	public VentanaPrincipal() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/imagenes/iconoLibreria.png")));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -34,51 +48,55 @@ public class VentanaPrincipal extends JFrame {
 		setResizable(false);
 		setTitle(ConstantesVista.TITULO);
 		setLocationRelativeTo(null);
-		
 		controlador = new Controlador();
 
-		JMenuBar menuBar = new JMenuBar();
+		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
-		JMenu mnArchivo = new JMenu(ConstantesVista.T_MENU_ARCHIVO);
+		mnArchivo = new JMenu();
 		menuBar.add(mnArchivo);
 
-		JMenuItem mntmImportar = new JMenuItem(
-				ConstantesVista.T_MENU_ITEM_IMPORTAR);
-		mnArchivo.add(mntmImportar);
+		itemImportar = new JMenuItem();
+		mnArchivo.add(itemImportar);
+		
+		itemExportar = new JMenuItem();
+		mnArchivo.add(itemExportar);
 
-		JMenuItem mntmExportar = new JMenuItem(
-				ConstantesVista.T_MENU_ITEM_EXPORTAR);
-		mnArchivo.add(mntmExportar);
+		itemSalir = new JMenuItem();
+		mnArchivo.add(itemSalir);
 
-		JMenuItem mntmSalir = new JMenuItem(ConstantesVista.T_MENU_ITEM_SALIR);
-		mnArchivo.add(mntmSalir);
-
-		JMenu mnOpciones = new JMenu(ConstantesVista.T_MENU_OPCIONES);
+		mnOpciones = new JMenu();
 		menuBar.add(mnOpciones);
 
-		JMenuItem mntmIdioma = new JMenuItem(ConstantesVista.T_MENU_ITEM_IDIOMA);
-		mnOpciones.add(mntmIdioma);
+		itemIdioma = new JMenu();
+		mnOpciones.add(itemIdioma);
+		
+		itemEspanol = new JMenuItem();
+		itemEspanol.addActionListener(controlador);
+		itemEspanol.setActionCommand(Controlador.AC_BTN_CAMBIAR_A_ESPAÑOL);
+		itemIdioma.add(itemEspanol);
+		
+		itemIngles = new JMenuItem();
+		itemIdioma.add(itemIngles);
 
-		JMenu mnAyuda = new JMenu(ConstantesVista.T_MENU_AYUDA);
+		mnAyuda = new JMenu();
 		menuBar.add(mnAyuda);
 
-		JMenuItem mntmAcercaDe = new JMenuItem(
-				ConstantesVista.T_MENU_ITEM_ACERCA_DE);
-		mnAyuda.add(mntmAcercaDe);
+		itemAcercaDe = new JMenuItem();
+		mnAyuda.add(itemAcercaDe);
 
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setBackground(new Color(240, 255, 240));
 		getContentPane().add(panel, BorderLayout.NORTH);
 
-		JButton btnUsuario = new JButton(ConstantesVista.BTN_USUARIO);
+		btnUsuario = new JButton();
 		btnUsuario.setBackground(new Color(204, 204, 255));
 		btnUsuario.addActionListener(controlador);
 		btnUsuario.setActionCommand(Controlador.AC_BTN_USUARIO);
 		btnUsuario.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/imagenes/iconoUsuario.png")));
 		panel.add(btnUsuario);
 
-		JButton btnAdministrador = new JButton(ConstantesVista.BTN_ADMINISTRADOR);
+		btnAdministrador = new JButton();
 		btnAdministrador.setBackground(new Color(255, 204, 204));
 		btnAdministrador.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/imagenes/iconoAdministrador.png")));
 		btnAdministrador.addActionListener(controlador);
@@ -103,5 +121,20 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setBackgorund(ImageIcon backgorund) {
 		this.backgorund = backgorund;
+	}
+
+	public void  init() {
+		this.setTitle(ConstantesVista.TITULO);
+		itemImportar.setText(ConstantesVista.T_MENU_ITEM_IMPORTAR);
+		itemExportar.setText(ConstantesVista.T_MENU_ITEM_EXPORTAR);
+		itemSalir.setText(ConstantesVista.T_MENU_ITEM_SALIR);
+		mnArchivo.setText(ConstantesVista.T_MENU_ARCHIVO);
+		mnOpciones.setText(ConstantesVista.T_MENU_OPCIONES);
+		itemIdioma.setText(ConstantesVista.T_MENU_ITEM_IDIOMA);
+		itemEspanol.setText(ConstantesVista.T_MENU_ITEM_ESPAÑOL);
+		itemIngles.setText(ConstantesVista.T_MENU_ITEM_INGLES);
+		itemAcercaDe.setText(ConstantesVista.T_MENU_ITEM_ACERCA_DE);
+		btnUsuario.setText(ConstantesVista.BTN_USUARIO);
+		btnAdministrador.setText(ConstantesVista.BTN_ADMINISTRADOR);
 	}
 }

@@ -1,8 +1,9 @@
 package vista;
 
+
 public class ConstantesVista {
 
-	public static final String TITULO = "Libreria";
+	public static final String TITULO = "titulo";
 	public static final int ANCHO_VENTANA = 600;
 	public static final int ALTO_VENTANA = 500;
 	public static final int ANCHO_DIALOGO = 600;
@@ -15,7 +16,9 @@ public class ConstantesVista {
 	public static final String T_MENU_ITEM_BUSQUEDA = "Busqueda";
 	public static final String T_MENU_ITEM_IMPORTAR = "Importar";
 	public static final String T_MENU_ITEM_EXPORTAR = "Exportar";
+	public static final String T_MENU_ITEM_INGLES = "Ingles";
 	public static final String T_MENU_ITEM_TEMA = "Tema";
+	public static final String T_MENU_ITEM_ESPAÑOL = "Espanol";
 	public static final String T_MENU_AYUDA = "Ayuda";
 	public static final String T_MENU_ITEM_ACERCA_DE = "Acerca de";
 	public static final String L_LABEL_INFO = "Informacion";
@@ -28,12 +31,15 @@ public class ConstantesVista {
 	// Constantes Dialogo Usuario
 	public static final String TITULO_DIALOGO_USUARIO = "Usuario";
 	public static final String BTN_CONFIRMAR_USUARIO = "Confirmar";
+	public static final String LBL_USUARIO_LIBRO = "Libro";
+	public static final String LBL_USUARIO_AUTOR = "Autor";
+	public static final String LBL_USUARIO_GENERO = "Genero";
 	
 	//constantes BarraHerramientasUsuario
 	public static final String BTN_COMPRAR_LIBRO = "Comprar Libro";
 	// constates BarraHerramientaAdministrador
 	public static final String BTN_CREAR_NUEVO_LIBRO = "Nuevo";
-	public static final String BTN_ACTUALIZAR_LIBRO = "Acualizar";
+	public static final String BTN_ACTUALIZAR_LIBRO = "Actualizar";
 	public static final String BTN_EDITAR_LIBRO = "Editar";
 	public static final String BTN_ELIMINAR_LIBRO = "Eliminar";
 	public static final String LBL_BUSCAR_LIBRO = "Buscar";

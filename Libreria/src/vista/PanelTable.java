@@ -57,7 +57,7 @@ public class PanelTable  extends JPanel{
 			String cadena = (barraAdministrador.getTextBuscar().getText());
 			barraAdministrador.getTextBuscar().setText(cadena);
 			repaint();
-			filtroId();
+			filtrarId();
 			}
 			});
 			trsfiltro = new TableRowSorter<TableModel>(tablaLibros.getModel());
