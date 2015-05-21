@@ -38,7 +38,8 @@ public class ConstantesVista {
 	//constantes BarraHerramientasUsuario
 	public static final String BTN_COMPRAR_LIBRO = "Comprar Libro";
 	// constates BarraHerramientaAdministrador
-	public static final String BTN_CREAR_NUEVO_LIBRO = "Nuevo";
+	public static final String BTN_CREAR_NUEVO_LIBRO = "Nuevo Libro";
+	public static final String BTN_MOSTRAR_DIALOGO_CREAR_NUEVO_USUARIO = "Nuevo Usuario";
 	public static final String BTN_ACTUALIZAR_LIBRO = "Actualizar";
 	public static final String BTN_EDITAR_LIBRO = "Editar";
 	public static final String BTN_ELIMINAR_LIBRO = "Eliminar";
@@ -56,7 +57,9 @@ public class ConstantesVista {
 	public static final String LBL_DESCRIPCION = "Descripcion";
 	public static final String LBL_ID = "ID";
 	public static final String LBL_VALOR = "Valor";
-
-	
+	public static final String TITULO_DIALOGO_LOGIN_USER = "Registrar Usuario";
+	public static final String BTN_CREAR_NUEVO_USUARIO = "Crear Nuevo Usuario";
+	public static final String LABEL_NOMBRE_REGISTRO_USUARIO = "Nombre";
+	public static final String LABEL_CONSTRASEÑA_REGISTRO_CONTRASEÑA = "Constraseña";
 
 }

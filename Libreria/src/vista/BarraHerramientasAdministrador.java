@@ -26,12 +26,19 @@ public class BarraHerramientasAdministrador extends JToolBar {
 	private JRadioButton radioId;
 	private ButtonGroup grupoBuscar;
 	private JButton btnBuscar;
+	private JButton btnMostrarDialogoCrearUsuario;
 	
 	public BarraHerramientasAdministrador(Controlador controlador) {
 		btnCrearLibro = new JButton();
 		btnCrearLibro.addActionListener(controlador);
 		btnCrearLibro.setActionCommand(Controlador.AC_MOSTRAR_DIALOGO_CREAR_LIBRO);
 		add(btnCrearLibro);
+		
+		btnMostrarDialogoCrearUsuario = new JButton();
+		btnMostrarDialogoCrearUsuario.addActionListener(controlador);
+		btnMostrarDialogoCrearUsuario.setActionCommand(Controlador.AC_BTN_MOSTRAR_DIALOGO_CREAR_USUARIO);
+		add(btnMostrarDialogoCrearUsuario);
+		
 		btnActualizar = new JButton();
 		add(btnActualizar);
 		btnEditar = new JButton();
@@ -71,6 +78,7 @@ public class BarraHerramientasAdministrador extends JToolBar {
 	}
 	public void init(){
 		btnCrearLibro.setText(ConstantesVista.BTN_CREAR_NUEVO_LIBRO);
+		btnMostrarDialogoCrearUsuario.setText(ConstantesVista.BTN_MOSTRAR_DIALOGO_CREAR_NUEVO_USUARIO);
 		btnActualizar.setText(ConstantesVista.BTN_ACTUALIZAR_LIBRO);
 		btnEditar.setText(ConstantesVista.BTN_EDITAR_LIBRO);
 		btnEliminar.setText(ConstantesVista.BTN_ELIMINAR_LIBRO);

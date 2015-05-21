@@ -14,6 +14,7 @@ import modelo.Libro;
 import modelo.dao.GestorLibros;
 import vista.DialogoAdministrador;
 import vista.DialogoCrearLibro;
+import vista.DialogoCrearUsuario;
 import vista.DialogoUsuario;
 import vista.PanelTable;
 import vista.VentanaPrincipal;
@@ -33,12 +34,15 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public static final String AC_BTN_ELIMINAR_LIBRO = "ELIMINAR LIBRO";
 	public static final String AC_BTN_CAMBIAR_A_ESPANIOL = "CAMBIAR IDIOMA A ESPANOL";
 	public static final String AC_BTN_CAMBIAR_A_INGLES = "CAMBIAR IDIOMA A INGLES";
+	public static final String AC_BTN_MOSTRAR_DIALOGO_CREAR_USUARIO = "MOSTRAR DIALODO CREAR UN USUARIO NUEVO";
+	public static final String AC_BTN_CREAR_USUARIO = "CREAR UN NUEVO USUARIO";
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	private DialogoCrearLibro dialogoCrearLibro;
 	private GestorLibros gestor;
 	private PanelTable panelTable;
 	private Properties properties;
+	private DialogoCrearUsuario dialogoCrearUSuario;
 
 	public Controlador() {
 		dialogoAdministrador = new DialogoAdministrador(this);
@@ -47,7 +51,8 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		panelTable = new PanelTable(this);
 		gestor = new GestorLibros();
 		properties = new Properties();
-		cargarProperties("archivos_properties/ingles.properties");
+		dialogoCrearUSuario = new DialogoCrearUsuario(this);
+		cargarProperties("/archivos_properties/ingles.properties");
 	}
 
 	@Override
@@ -67,9 +72,9 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			dialogoCrearLibro.limpiarFormulario();
 			break;
 		case AC_BTN_CANCELAR_DIALOGO:
-			dialogoCrearLibro.dispose();
+			dialogoCrearLibro.setVisible(false);
 		case AC_BTN_CONFIRMAR_USUARIO:
-			dialogoUsuario.dispose();
+			dialogoUsuario.setVisible(true);
 			break;
 		case AC_RDBTN_BUSCAR_ID_ADMIISTRADOR:
 			System.out.println("ID");
@@ -92,6 +97,8 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			actualizarIdiomaEspanol();
 		case AC_BTN_CAMBIAR_A_INGLES:
 			actualizarIdiomaIngles();
+		case AC_BTN_MOSTRAR_DIALOGO_CREAR_USUARIO:
+			dialogoCrearUSuario.setVisible(true);
 		}
 	}
 	public void agregarNuevoLibro(){
@@ -105,14 +112,12 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	}
 	private void actualizarIdiomaEspanol(){
 		cargarProperties("/archivos_properties/espanol.properties");
-//		ventanaPrincipal.init();
 		dialogoAdministrador.init();
 		dialogoUsuario.init();
 		dialogoCrearLibro.init();
 	}
 	private void actualizarIdiomaIngles(){
-		cargarProperties("archivos_properties/ingles.properties");
-//		ventanaPrincipal.init();
+		cargarProperties("/archivos_properties/ingles.properties");
 		dialogoAdministrador.init();
 		dialogoUsuario.init();
 		dialogoCrearLibro.init();
