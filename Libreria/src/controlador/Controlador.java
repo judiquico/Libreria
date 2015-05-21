@@ -120,7 +120,6 @@ public class Controlador implements ActionListener, ListSelectionListener {
 
 	@Override
 	public void valueChanged(ListSelectionEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	public void eliminarLibro(){
