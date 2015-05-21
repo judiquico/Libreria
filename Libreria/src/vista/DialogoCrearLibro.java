@@ -122,6 +122,7 @@ public class DialogoCrearLibro  extends JDialog {
 		btnCancelar.setActionCommand(Controlador.AC_BTN_CANCELAR_DIALOGO);
 		this.btnCancelar.setBounds(320, 12, 98, 26);
 		this.panel_1.add(this.btnCancelar);
+		init();
 	}
 	
 	public void limpiarFormulario(){

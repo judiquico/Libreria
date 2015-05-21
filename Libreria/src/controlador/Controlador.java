@@ -48,7 +48,6 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		gestor = new GestorLibros();
 		properties = new Properties();
 		cargarProperties("archivos_properties/espanol.pr");
-		
 	}
 
 	@Override
@@ -133,6 +132,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 
 	public static void main(String[] args) {
 		VentanaPrincipal vt = new VentanaPrincipal();
+		vt.init();
 		vt.setVisible(true);
 	}
 }
