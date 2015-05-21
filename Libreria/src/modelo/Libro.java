@@ -15,8 +15,6 @@ public class Libro {
 		super();
 		this.autor = autor;
 		this.descripcion = descripcion;
-		this.ejemplaresVendidos = ejemplaresVendidos;
-		this.idLibro = idLibro;
 		this.titulo = titulo;
 		this.valor = valor;
 	}

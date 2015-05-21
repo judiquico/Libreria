@@ -31,7 +31,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public static final String AC_RDBTN_USCAR_TITULO_ADMINSTRADOR = "BUSCAR POR TITULO EN ADMINISTRADOR";
 	public static final String AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR = "BUSCAR POR AUTOR EN ADMNISTRADOR";
 	public static final String AC_BTN_ELIMINAR_LIBRO = "ELIMINAR LIBRO";
-	public static final String AC_BTN_CAMBIAR_A_ESPAÑOL = "CAMBIAR IDIOMA A ESPANOL";
+	public static final String AC_BTN_CAMBIAR_A_ESPANIOL = "CAMBIAR IDIOMA A ESPANOL";
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	private DialogoCrearLibro dialogoCrearLibro;
@@ -89,7 +89,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			if (confirmacion == JOptionPane.OK_OPTION) {
 				eliminarLibro();
 			}
-		case AC_BTN_CAMBIAR_A_ESPAÑOL:
+		case AC_BTN_CAMBIAR_A_ESPANIOL:
 			actualizarIdiomaEspanol();
 		}
 	}

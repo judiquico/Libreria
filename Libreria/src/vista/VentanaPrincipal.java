@@ -73,7 +73,7 @@ public class VentanaPrincipal extends JFrame {
 		
 		itemEspanol = new JMenuItem();
 		itemEspanol.addActionListener(controlador);
-		itemEspanol.setActionCommand(Controlador.AC_BTN_CAMBIAR_A_ESPAÑOL);
+		itemEspanol.setActionCommand(Controlador.AC_BTN_CAMBIAR_A_ESPANIOL);
 		itemIdioma.add(itemEspanol);
 		
 		itemIngles = new JMenuItem();
@@ -131,7 +131,7 @@ public class VentanaPrincipal extends JFrame {
 		mnArchivo.setText(ConstantesVista.T_MENU_ARCHIVO);
 		mnOpciones.setText(ConstantesVista.T_MENU_OPCIONES);
 		itemIdioma.setText(ConstantesVista.T_MENU_ITEM_IDIOMA);
-		itemEspanol.setText(ConstantesVista.T_MENU_ITEM_ESPAÑOL);
+		itemEspanol.setText(ConstantesVista.T_MENU_ITEM_ESPANIOL);
 		itemIngles.setText(ConstantesVista.T_MENU_ITEM_INGLES);
 		itemAcercaDe.setText(ConstantesVista.T_MENU_ITEM_ACERCA_DE);
 		btnUsuario.setText(ConstantesVista.BTN_USUARIO);

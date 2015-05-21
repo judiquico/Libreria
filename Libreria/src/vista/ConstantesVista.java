@@ -18,7 +18,7 @@ public class ConstantesVista {
 	public static final String T_MENU_ITEM_EXPORTAR = "Exportar";
 	public static final String T_MENU_ITEM_INGLES = "Ingles";
 	public static final String T_MENU_ITEM_TEMA = "Tema";
-	public static final String T_MENU_ITEM_ESPAÑOL = "Espanol";
+	public static final String T_MENU_ITEM_ESPANIOL = "Espanol";
 	public static final String T_MENU_AYUDA = "Ayuda";
 	public static final String T_MENU_ITEM_ACERCA_DE = "Acerca de";
 	public static final String L_LABEL_INFO = "Informacion";

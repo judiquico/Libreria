@@ -28,7 +28,7 @@ public class DialogoCrearLibro  extends JDialog {
 	private JTextField textFieldValor;
 	private JTextField textFieldId;
 	private JPanel panel_1;
-	private JButton btnAñadir;
+	private JButton btnAniadir;
 	private JButton btnCancelar;
 	private JLabel lblId ;
 	private JLabel lblTituloLibro;
@@ -111,11 +111,11 @@ public class DialogoCrearLibro  extends JDialog {
 		panel.add(this.panel_1);
 		this.panel_1.setLayout(null);
 		
-		this.btnAñadir = new JButton();
-		btnAñadir.addActionListener(controlador);
-		btnAñadir.setActionCommand(Controlador.AC_CONFIRM_CREAR_LIBRO);
-		this.btnAñadir.setBounds(210, 12, 98, 26);
-		this.panel_1.add(this.btnAñadir);
+		this.btnAniadir = new JButton();
+		btnAniadir.addActionListener(controlador);
+		btnAniadir.setActionCommand(Controlador.AC_CONFIRM_CREAR_LIBRO);
+		this.btnAniadir.setBounds(210, 12, 98, 26);
+		this.panel_1.add(this.btnAniadir);
 		
 		this.btnCancelar = new JButton();
 		btnCancelar.addActionListener(controlador);
@@ -143,7 +143,7 @@ public class DialogoCrearLibro  extends JDialog {
 		lblCategoria.setText(ConstantesVista.LBL_CATEGORIA);
 		lblDescripcion.setText(ConstantesVista.LBL_DESCRIPCION);
 		lblValor.setText(ConstantesVista.LBL_VALOR);
-		btnAñadir.setText(ConstantesVista.BTN_CONFIRMAR_NUEVO_LIBRO);
+		btnAniadir.setText(ConstantesVista.BTN_CONFIRMAR_NUEVO_LIBRO);
 		btnCancelar.setText(ConstantesVista.BTN_CANCELAR_DIALOGO);
 	}
 }
