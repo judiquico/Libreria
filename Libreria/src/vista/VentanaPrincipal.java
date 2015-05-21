@@ -26,17 +26,7 @@ public class VentanaPrincipal extends JFrame {
 	private ImageIcon backgorund;
 	private JLabel lblImagen;
 	private Controlador controlador;
-	private JMenuItem itemImportar ;
-	private JMenuItem itemExportar ;
-	private JMenuItem itemSalir ;
-	private JMenuBar menuBar ;
-	private JMenu mnArchivo ;
-	private JMenu mnOpciones ;
-	private JMenu itemIdioma ;
-	private JMenuItem itemEspanol ;
-	private JMenuItem itemIngles ;
-	private JMenu mnAyuda;
-	private JMenuItem itemAcercaDe ;
+	
 	private JPanel panel ;
 	private JButton btnUsuario ;
 	private JButton btnAdministrador ;
@@ -50,40 +40,7 @@ public class VentanaPrincipal extends JFrame {
 		setLocationRelativeTo(null);
 		controlador = new Controlador();
 
-		menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
-
-		mnArchivo = new JMenu();
-		menuBar.add(mnArchivo);
-
-		itemImportar = new JMenuItem();
-		mnArchivo.add(itemImportar);
 		
-		itemExportar = new JMenuItem();
-		mnArchivo.add(itemExportar);
-
-		itemSalir = new JMenuItem();
-		mnArchivo.add(itemSalir);
-
-		mnOpciones = new JMenu();
-		menuBar.add(mnOpciones);
-
-		itemIdioma = new JMenu();
-		mnOpciones.add(itemIdioma);
-		
-		itemEspanol = new JMenuItem();
-		itemEspanol.addActionListener(controlador);
-		itemEspanol.setActionCommand(Controlador.AC_BTN_CAMBIAR_A_ESPANIOL);
-		itemIdioma.add(itemEspanol);
-		
-		itemIngles = new JMenuItem();
-		itemIdioma.add(itemIngles);
-
-		mnAyuda = new JMenu();
-		menuBar.add(mnAyuda);
-
-		itemAcercaDe = new JMenuItem();
-		mnAyuda.add(itemAcercaDe);
 
 		panel = new JPanel();
 		panel.setBackground(new Color(240, 255, 240));
@@ -122,19 +79,11 @@ public class VentanaPrincipal extends JFrame {
 	public void setBackgorund(ImageIcon backgorund) {
 		this.backgorund = backgorund;
 	}
-
-	public void  init() {
+	
+	public void init(){
 		this.setTitle(ConstantesVista.TITULO);
-		itemImportar.setText(ConstantesVista.T_MENU_ITEM_IMPORTAR);
-		itemExportar.setText(ConstantesVista.T_MENU_ITEM_EXPORTAR);
-		itemSalir.setText(ConstantesVista.T_MENU_ITEM_SALIR);
-		mnArchivo.setText(ConstantesVista.T_MENU_ARCHIVO);
-		mnOpciones.setText(ConstantesVista.T_MENU_OPCIONES);
-		itemIdioma.setText(ConstantesVista.T_MENU_ITEM_IDIOMA);
-		itemEspanol.setText(ConstantesVista.T_MENU_ITEM_ESPANIOL);
-		itemIngles.setText(ConstantesVista.T_MENU_ITEM_INGLES);
-		itemAcercaDe.setText(ConstantesVista.T_MENU_ITEM_ACERCA_DE);
 		btnUsuario.setText(ConstantesVista.BTN_USUARIO);
 		btnAdministrador.setText(ConstantesVista.BTN_ADMINISTRADOR);
 	}
+
 }

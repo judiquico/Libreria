@@ -32,6 +32,7 @@ public class DialogoUsuario extends JDialog {
 	private PanelTable panelTable;
 	private JButton okButton;
 	private JButton cancelButton;
+	private MenuLibro menuLibro;
 	
 	public DialogoUsuario(Controlador controlador) {
 		setFont(new Font("Dialog", Font.PLAIN, 16));
@@ -40,6 +41,9 @@ public class DialogoUsuario extends JDialog {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				DialogoUsuario.class.getResource("/imagenes/iconoUsuario.png")));
 		getContentPane().setLayout(new BorderLayout());
+		menuLibro = new MenuLibro(controlador);
+		menuLibro.initMenu();
+		setJMenuBar(menuLibro);
 		panelCentral = new JPanel();
 		usuario = new BarraHerramientasUsuario(controlador);
 		add(usuario, BorderLayout.NORTH);

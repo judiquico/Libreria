@@ -32,13 +32,13 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public static final String AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR = "BUSCAR POR AUTOR EN ADMNISTRADOR";
 	public static final String AC_BTN_ELIMINAR_LIBRO = "ELIMINAR LIBRO";
 	public static final String AC_BTN_CAMBIAR_A_ESPANIOL = "CAMBIAR IDIOMA A ESPANOL";
+	public static final String AC_BTN_CAMBIAR_A_INGLES = "CAMBIAR IDIOMA A INGLES";
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	private DialogoCrearLibro dialogoCrearLibro;
 	private GestorLibros gestor;
 	private PanelTable panelTable;
 	private Properties properties;
-	private VentanaPrincipal ventanaPrincipal;
 
 	public Controlador() {
 		dialogoAdministrador = new DialogoAdministrador(this);
@@ -47,7 +47,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		panelTable = new PanelTable(this);
 		gestor = new GestorLibros();
 		properties = new Properties();
-		cargarProperties("archivos_properties/espanol.pr");
+		cargarProperties("archivos_properties/ingles.properties");
 	}
 
 	@Override
@@ -90,6 +90,8 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			}
 		case AC_BTN_CAMBIAR_A_ESPANIOL:
 			actualizarIdiomaEspanol();
+		case AC_BTN_CAMBIAR_A_INGLES:
+			actualizarIdiomaIngles();
 		}
 	}
 	public void agregarNuevoLibro(){
@@ -102,8 +104,15 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		}
 	}
 	private void actualizarIdiomaEspanol(){
-		cargarProperties("/archivos_properties/espanol.pr");
-		ventanaPrincipal.init();
+		cargarProperties("/archivos_properties/espanol.properties");
+//		ventanaPrincipal.init();
+		dialogoAdministrador.init();
+		dialogoUsuario.init();
+		dialogoCrearLibro.init();
+	}
+	private void actualizarIdiomaIngles(){
+		cargarProperties("archivos_properties/ingles.properties");
+//		ventanaPrincipal.init();
 		dialogoAdministrador.init();
 		dialogoUsuario.init();
 		dialogoCrearLibro.init();
