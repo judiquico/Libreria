@@ -4,18 +4,12 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
 import java.awt.Toolkit;
-
 import javax.swing.JPanel;
 import javax.swing.JButton;
-
 import controlador.Controlador;
-
 import java.awt.Color;
-
 import javax.swing.ImageIcon;
-
 
 public class VentanaPrincipal extends JFrame {
 
@@ -36,8 +30,6 @@ public class VentanaPrincipal extends JFrame {
 		setTitle(ConstantesVista.TITULO);
 		setLocationRelativeTo(null);
 		controlador = new Controlador();
-
-		
 
 		panel = new JPanel();
 		panel.setBackground(new Color(240, 255, 240));
@@ -82,5 +74,4 @@ public class VentanaPrincipal extends JFrame {
 		btnUsuario.setText(ConstantesVista.BTN_USUARIO);
 		btnAdministrador.setText(ConstantesVista.BTN_ADMINISTRADOR);
 	}
-
 }
