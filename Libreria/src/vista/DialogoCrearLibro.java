@@ -105,23 +105,23 @@ public class DialogoCrearLibro  extends JDialog {
 		panel.add(textFieldValor);
 		textFieldValor.setColumns(10);
 		
-		this.panel_1 = new JPanel();
-		this.panel_1.setBackground(new Color(204, 204, 255));
-		this.panel_1.setBounds(0, 324, 450, 47);
-		panel.add(this.panel_1);
-		this.panel_1.setLayout(null);
+		panel_1 = new JPanel();
+		panel_1.setBackground(new Color(204, 204, 255));
+		panel_1.setBounds(0, 324, 450, 47);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
 		
-		this.btnAniadir = new JButton();
+		btnAniadir = new JButton();
 		btnAniadir.addActionListener(controlador);
 		btnAniadir.setActionCommand(Controlador.AC_CONFIRM_CREAR_LIBRO);
-		this.btnAniadir.setBounds(210, 12, 98, 26);
-		this.panel_1.add(this.btnAniadir);
+		btnAniadir.setBounds(210, 12, 98, 26);
+		panel_1.add(btnAniadir);
 		
-		this.btnCancelar = new JButton();
+		btnCancelar = new JButton();
 		btnCancelar.addActionListener(controlador);
 		btnCancelar.setActionCommand(Controlador.AC_BTN_CANCELAR_DIALOGO);
-		this.btnCancelar.setBounds(320, 12, 98, 26);
-		this.panel_1.add(this.btnCancelar);
+		btnCancelar.setBounds(320, 12, 98, 26);
+		panel_1.add(btnCancelar);
 		init();
 	}
 	
@@ -134,7 +134,8 @@ public class DialogoCrearLibro  extends JDialog {
 	}
 
 	public Libro crearLibro() {
-		Libro libro = GestorLibros.crearLibro(textFieldTitulo.getText(),new Autor(textFieldAutor.getText()), textAreaDescripcion.getText(), textFieldValor.getText());
+		Libro libro = GestorLibros.crearLibro(textFieldTitulo.getText(), new Autor(textFieldAutor.getText()), 
+				textAreaDescripcion.getText(), Double.parseDouble(textFieldValor.getText()), (Genero)comboBox.getSelectedItem());
 		return libro;	
 	}
 	public void init(){

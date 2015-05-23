@@ -28,7 +28,7 @@ public class PanelTable  extends JPanel{
 	
 	
 	public PanelTable(Controlador controlador) {
-		modelo = new DefaultTableModel(new String []{"Id","Titulo","Autor", "Descripcion","Valor", "Ejemplares Vendidos", "Categoria"},0);
+		modelo = new DefaultTableModel(new String []{"Id","Titulo","Autor", "Descripcion","Valor"},0);
 		tablaLibros= new JTable(modelo);
 		tablaLibros.getSelectionModel().addListSelectionListener(controlador);
 		add(new JScrollPane(tablaLibros));
@@ -38,7 +38,7 @@ public class PanelTable  extends JPanel{
 		return tablaLibros.getSelectedRow();
 	}
 	
-	public void addLibro(Libro libro) {
+	public void agregarLibroTabla(Libro libro){
 		modelo.addRow(Util.libroAVector(libro));
 	}
 	

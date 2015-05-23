@@ -3,6 +3,7 @@ package modelo.dao;
 import java.util.ArrayList;
 
 import modelo.Autor;
+import modelo.Genero;
 import modelo.Libro;
 import modelo.util.Util;
 
@@ -15,15 +16,12 @@ public class GestorLibros {
 	}
 
 	public static Libro crearLibro(String titulo, Autor autor,
-			String descripcion, String valor) {
-		if (Util.validarValor(valor)) {
-			return new Libro(titulo, autor, descripcion, Double.parseDouble(valor));
-		}else
-			return null;
+			String descripcion, Double valor, Genero genero) {
+			return new Libro(titulo, autor, descripcion, valor, genero);
 	}
 
-	public void agregarLibro(Libro libro) {
-		listaLibros.add(libro);
+	public void agregarLibro(Libro nuevoLibro) {
+		listaLibros.add(nuevoLibro);
 	}
 
 	public Libro libro(int id){
@@ -47,5 +45,7 @@ public class GestorLibros {
 		return null;
 	}
 
-
+	public ArrayList<Libro> getListaLibros() {
+		return listaLibros;
+	}
 }

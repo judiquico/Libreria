@@ -11,12 +11,13 @@ public class Libro {
 	private Genero generoLibro;
 
 	public Libro(String titulo,  Autor autor, String descripcion,
-			 double valor) {
+			 double valor, Genero genero) {
 		super();
 		this.autor = autor;
 		this.descripcion = descripcion;
 		this.titulo = titulo;
 		this.valor = valor;
+		this.generoLibro = genero;
 	}
 	
 
@@ -75,5 +76,9 @@ public class Libro {
 	public void setGeneroLibro(Genero generoLibro) {
 		this.generoLibro = generoLibro;
 	}
-
+	
+	@Override
+	public String toString() {
+		return idLibro + "," + titulo + "," + autor + "," + descripcion + "," + valor + "," + generoLibro;
+	}
 }

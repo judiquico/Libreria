@@ -70,6 +70,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		case AC_CONFIRM_CREAR_LIBRO:
 			agregarNuevoLibro();
 			dialogoCrearLibro.limpiarFormulario();
+			System.out.println(gestor.getListaLibros());
 			break;
 		case AC_BTN_CANCELAR_DIALOGO:
 			dialogoCrearLibro.setVisible(false);
@@ -103,12 +104,11 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	}
 	public void agregarNuevoLibro(){
 		Libro libro = dialogoCrearLibro.crearLibro();
-		if (libro != null) {
-			gestor.agregarLibro(libro);
-			panelTable.addLibro(libro);
-			dialogoCrearLibro.dispose();
-			System.out.println(libro);
+		if (libro != null) {	
+			gestor.agregarLibro(libro);;
+			panelTable.agregarLibroTabla(libro);
 		}
+		dialogoCrearLibro.dispose();
 	}
 	private void actualizarIdiomaEspanol(){
 		cargarProperties("/archivos_properties/espanol.properties");

@@ -5,7 +5,7 @@ public class Autor {
 	private int id_autor;
 	private String nombre;
 
-	public Autor( String nombre) {
+	public Autor(String nombre) {
 		super();
 		this.nombre = nombre;
 	}
@@ -24,5 +24,10 @@ public class Autor {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	@Override
+	public String toString() {
+		return nombre;
 	}
 }
