@@ -9,7 +9,9 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 import controlador.Controlador;
 
@@ -25,7 +27,7 @@ public class DialogoCrearUsuario extends JDialog {
 	private JLabel labelNombre;
 	private JLabel labelContraseña;
 	private JTextField textFielNombre;
-	private JTextField textFielContraseña;
+	private JPasswordField textFielContraseña;
 	private JPanel panelCampos;
 
 	public DialogoCrearUsuario(Controlador controlador) {
@@ -56,7 +58,7 @@ public class DialogoCrearUsuario extends JDialog {
 		gb.gridy = 1;
 		panelCampos.add(labelContraseña, gb);
 
-		textFielContraseña = new JTextField(20);
+		textFielContraseña = new JPasswordField(20);
 		gb.gridx = 1;
 		gb.gridy = 1;
 		panelCampos.add(textFielContraseña, gb);
