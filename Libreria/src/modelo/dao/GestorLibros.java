@@ -1,51 +1,57 @@
 package modelo.dao;
 
 import java.util.ArrayList;
-
-import modelo.Autor;
-import modelo.Genero;
-import modelo.Libro;
+import modelo.entidades.Libro;
+import modelo.excepciones.ExcepcionLibroNoEncontrado;
 import modelo.util.Util;
 
 public class GestorLibros {
-	
-	private ArrayList<Libro>listaLibros;
-	
+
+	private ArrayList<Libro> listaLibro;
+
 	public GestorLibros() {
-		listaLibros = new ArrayList<Libro>();
+		listaLibro = new ArrayList<Libro>();
 	}
 
-	public static Libro crearLibro(String titulo, Autor autor,
-			String descripcion, Double valor, Genero genero) {
-			return new Libro(titulo, autor, descripcion, valor, genero);
+	public void agregarLibro(Libro libro){
+		listaLibro.add(libro);
 	}
 
-	public void agregarLibro(Libro nuevoLibro) {
-		listaLibros.add(nuevoLibro);
+	public void eliminarLibro(Libro libro){
+		listaLibro.remove(libro);	
 	}
 
-	public Libro libro(int id){
-		for (Libro libro : listaLibros) {
-			if (libro.getIdLibro()== id) {
+	public Libro buscarLibro(int id) throws ExcepcionLibroNoEncontrado{
+		for (Libro libro:listaLibro ) {
+			if (libro.getId() == id) {
 				return libro;
 			}
 		}
-		return null;
-	}
-	public void borrarLibro(Libro libro){
-		listaLibros.remove(libro);
+		throw new ExcepcionLibroNoEncontrado(id);
 	}
 
-	public Libro buscarLibro(int id) {
-		for (Libro libro : listaLibros) {
-			if (libro.getIdLibro() == id) {
+	public Libro buscarLibro(String nombre) throws ExcepcionLibroNoEncontrado{
+		for (Libro libro:listaLibro) {
+			if (libro.getNombre().equalsIgnoreCase(nombre)) {
 				return libro;
 			}
+		}
+		throw new ExcepcionLibroNoEncontrado(nombre);
+	}
+
+	public static Libro crearLibro(String nombre, String descripcion, String valor, String genero, String autor){
+		if (Util.validarValor(valor)) {
+			return new Libro(nombre, descripcion, Double.parseDouble(valor),
+					genero,autor);	
 		}
 		return null;
 	}
 
-	public ArrayList<Libro> getListaLibros() {
-		return listaLibros;
+	public ArrayList<Libro> getListaLibro() {
+		return listaLibro;
+	}
+
+	public void setListaLibro(ArrayList<Libro> listaLibro) {
+		this.listaLibro = listaLibro;
 	}
 }

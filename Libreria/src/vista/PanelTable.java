@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
-import modelo.Libro;
+import modelo.entidades.Libro;
 import modelo.util.Util;
 import controlador.Controlador;
 
@@ -28,11 +28,12 @@ public class PanelTable  extends JPanel{
 	
 	
 	public PanelTable(Controlador controlador) {
-		modelo = new DefaultTableModel(new String []{"Id","Titulo","Autor", "Descripcion","Valor"},0);
-		tablaLibros= new JTable(modelo);
-		tablaLibros.getSelectionModel().addListSelectionListener(controlador);
+		modelo = new DefaultTableModel(new String[]{"Id","Titulo","Autor", "Descripcion", "Genero", "Valor"}, 0);
+		tablaLibros = new JTable(modelo);
 		add(new JScrollPane(tablaLibros));
 		barraAdministrador = new BarraHerramientasAdministrador(controlador);
+		tablaLibros.getTableHeader().setReorderingAllowed(false);
+		tablaLibros.getSelectionModel().addListSelectionListener(controlador);
 	}
 	public int getSelect(){
 		return tablaLibros.getSelectedRow();

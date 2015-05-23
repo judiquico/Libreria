@@ -10,8 +10,9 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import modelo.Libro;
 import modelo.dao.GestorLibros;
+import modelo.entidades.Libro;
+import modelo.excepciones.ExcepcionLibroNoEncontrado;
 import vista.DialogoAdministrador;
 import vista.DialogoCrearLibro;
 import vista.DialogoCrearUsuario;
@@ -70,7 +71,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		case AC_CONFIRM_CREAR_LIBRO:
 			agregarNuevoLibro();
 			dialogoCrearLibro.limpiarFormulario();
-			System.out.println(gestor.getListaLibros());
+			System.out.println(gestor.getListaLibro());
 			break;
 		case AC_BTN_CANCELAR_DIALOGO:
 			dialogoCrearLibro.setVisible(false);
@@ -129,7 +130,11 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	}
 	public void eliminarLibro(){
 		int id = panelTable.eliminarLibro();
-		gestor.borrarLibro(gestor.buscarLibro(id));
+		try {
+			gestor.eliminarLibro(gestor.buscarLibro(id));
+		} catch (ExcepcionLibroNoEncontrado e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void cargarProperties(String archivo){

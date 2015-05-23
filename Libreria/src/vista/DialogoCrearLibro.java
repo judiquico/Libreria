@@ -15,10 +15,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import controlador.Controlador;
-import modelo.Autor;
-import modelo.Genero;
-import modelo.Libro;
 import modelo.dao.GestorLibros;
+import modelo.entidades.Genero;
+import modelo.entidades.Libro;
 
 public class DialogoCrearLibro  extends JDialog {
 
@@ -133,10 +132,11 @@ public class DialogoCrearLibro  extends JDialog {
 		textAreaDescripcion.setText("");
 	}
 
-	public Libro crearLibro() {
-		Libro libro = GestorLibros.crearLibro(textFieldTitulo.getText(), new Autor(textFieldAutor.getText()), 
-				textAreaDescripcion.getText(), Double.parseDouble(textFieldValor.getText()), (Genero)comboBox.getSelectedItem());
-		return libro;	
+	public Libro crearLibro(){
+		Libro libro = GestorLibros.crearLibro(textFieldTitulo.getText(), textAreaDescripcion.getText(), textFieldValor.getText()
+				, comboBox.getSelectedItem().toString(), textFieldAutor.getText());
+		dispose();
+		return libro;		 
 	}
 	public void init(){
 		lblId.setText(ConstantesVista.LBL_ID);

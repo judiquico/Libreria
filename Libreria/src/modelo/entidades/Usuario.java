@@ -1,4 +1,4 @@
-package modelo;
+package modelo.entidades;
 
 public class Usuario {
 
@@ -36,5 +36,4 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 }

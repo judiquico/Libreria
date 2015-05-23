@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import controlador.Controlador;
-import modelo.Genero;
+import modelo.entidades.Genero;
 
 public class DialogoUsuario extends JDialog {
 
