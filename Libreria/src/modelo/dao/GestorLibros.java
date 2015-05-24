@@ -39,10 +39,10 @@ public class GestorLibros {
 		throw new ExcepcionLibroNoEncontrado(nombre);
 	}
 
-	public static Libro crearLibro(String nombre, String descripcion, String valor, String genero, String autor){
+	public static Libro crearLibro(String nombre, String descripcion, String valor, String genero, String autor, String ruta){
 		if (Util.validarValor(valor)) {
 			return new Libro(nombre, descripcion, Double.parseDouble(valor),
-					genero,autor);	
+					genero,autor, ruta);	
 		}
 		return null;
 	}

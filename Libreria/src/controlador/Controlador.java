@@ -2,10 +2,12 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -30,13 +32,14 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public static final String AC_BTN_CANCELAR_DIALOGO = "CERRAR EL DIALOGO";
 	public static final String AC_BTN_CONFIRMAR_USUARIO = "CONFIRMAR USUARIO";
 	public static final String AC_RDBTN_BUSCAR_ID_ADMIISTRADOR = "BUSCAR POR ID ADMINISTRADOR";
-	public static final String AC_RDBTN_USCAR_TITULO_ADMINSTRADOR = "BUSCAR POR TITULO EN ADMINISTRADOR";
+	public static final String AC_RDBTN_BUSCAR_TITULO_ADMINSTRADOR = "BUSCAR POR TITULO EN ADMINISTRADOR";
 	public static final String AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR = "BUSCAR POR AUTOR EN ADMNISTRADOR";
 	public static final String AC_BTN_ELIMINAR_LIBRO = "ELIMINAR LIBRO";
 	public static final String AC_BTN_CAMBIAR_A_ESPANIOL = "CAMBIAR IDIOMA A ESPANOL";
 	public static final String AC_BTN_CAMBIAR_A_INGLES = "CAMBIAR IDIOMA A INGLES";
 	public static final String AC_BTN_MOSTRAR_DIALOGO_CREAR_USUARIO = "MOSTRAR DIALODO CREAR UN USUARIO NUEVO";
 	public static final String AC_BTN_CREAR_USUARIO = "CREAR UN NUEVO USUARIO";
+	public static final String A_MOSTRAR_SUBIR_IMAGEN = "BTN_SUBIR_IMAGEN";
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	private DialogoCrearLibro dialogoCrearLibro;
@@ -82,7 +85,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			System.out.println("ID");
 			panelTable.filtrarId();
 			break;
-		case AC_RDBTN_USCAR_TITULO_ADMINSTRADOR:
+		case AC_RDBTN_BUSCAR_TITULO_ADMINSTRADOR:
 			System.out.println("titulo");
 			panelTable.filtrarTitulo();
 			break;
@@ -101,6 +104,8 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			actualizarIdiomaIngles();
 		case AC_BTN_MOSTRAR_DIALOGO_CREAR_USUARIO:
 			dialogoCrearUSuario.setVisible(true);
+		case A_MOSTRAR_SUBIR_IMAGEN:
+			implementarArchivoLibro();
 		}
 	}
 	public void agregarNuevoLibro(){
@@ -146,6 +151,11 @@ public class Controlador implements ActionListener, ListSelectionListener {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public File implementarArchivoLibro(){
+		File archivoLibro = dialogoCrearLibro.cargarLibro();
+		return archivoLibro;
 	}
 
 	public static void main(String[] args) {

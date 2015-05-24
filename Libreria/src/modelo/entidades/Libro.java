@@ -13,17 +13,19 @@ public class Libro implements Serializable{
 	private String image;
 	private String autor;
 	private int id;
+	private String ruta;
 	private static int consecutivo;
 
 
-	public Libro(String nombre, String descripcion, double valor, String genero, String autor) {
+	public Libro(String nombre, String descripcion, double valor, String genero, String autor, String ruta) {
+		consecutivo++;
 		this.id = consecutivo;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.genero = genero;
 		this.valor = valor;
 		this.autor = autor;
-		consecutivo++;
+		this.ruta = ruta;
 	}	
 
 	public String getNombre() {
@@ -94,8 +96,16 @@ public class Libro implements Serializable{
 		this.id = id;
 	}
 
+	public String getRuta() {
+		return ruta;
+	}
+
+	public void setRuta(String ruta) {
+		this.ruta = ruta;
+	}
+
 	@Override
 	public String toString() {
-		return nombre + "," + descripcion + "," + valor+ "," + genero+"," + autor;
+		return nombre + "," + descripcion + "," + valor+ "," + genero+ "," + autor + "," + ruta;
 	}
 }

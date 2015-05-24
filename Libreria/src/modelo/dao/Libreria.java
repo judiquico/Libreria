@@ -13,15 +13,14 @@ public class Libreria {
 
 	}
 
-	public void resgistrarCompra(Cliente cliente, Libro libro) {
+	public void registrarCompra(Cliente cliente, Libro libro) {
+		if (cliente.getDinero() >= libro.getValor()) {
+			
+		}
 
 	}
 
 	public void registrarDevolucion(Cliente cliente, Libro libro) {
-
-	}
-
-	public void libroMasVendido(){
 
 	}
 
@@ -30,10 +29,6 @@ public class Libreria {
 	}
 
 	public void copiasvendidas(){
-
-	}
-
-	public void regstrarVentas() {
 
 	}
 }

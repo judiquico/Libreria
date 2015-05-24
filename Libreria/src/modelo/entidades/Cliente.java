@@ -6,14 +6,14 @@ public class Cliente {
 
 	private String nombre;
 	private int id;
-	private double credito;
+	private double dinero;
 	private static int consecutivo;
 	private ArrayList<Libro> listaLibro;
 
-	public Cliente(String nombre, double credito) {
+	public Cliente(String nombre, double dinero) {
 		this.nombre = nombre;
 		this.id = consecutivo;
-		this.credito = credito;
+		this.dinero = dinero;
 		consecutivo++;
 	}
 
@@ -33,12 +33,12 @@ public class Cliente {
 		this.id = id;
 	}
 
-	public double getCredito() {
-		return credito;
+	public double getDinero() {
+		return dinero;
 	}
 
-	public void setCredito(double credito) {
-		this.credito = credito;
+	public void setDinero(double dinero) {
+		this.dinero = dinero;
 	}
 
 	public ArrayList<Libro> getListaLibro() {
@@ -51,6 +51,6 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return nombre + ","+ credito;
+		return nombre + ","+ dinero;
 	}
 }

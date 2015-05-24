@@ -4,20 +4,28 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileSystemView;
 
 import controlador.Controlador;
 import modelo.dao.GestorLibros;
 import modelo.entidades.Genero;
 import modelo.entidades.Libro;
+import modelo.util.Util;
 
 public class DialogoCrearLibro  extends JDialog {
 
@@ -28,6 +36,7 @@ public class DialogoCrearLibro  extends JDialog {
 	private JTextField textFieldId;
 	private JPanel panel_1;
 	private JButton btnAniadir;
+	private JButton btnSubirImagen;
 	private JButton btnCancelar;
 	private JLabel lblId ;
 	private JLabel lblTituloLibro;
@@ -35,8 +44,11 @@ public class DialogoCrearLibro  extends JDialog {
 	private JLabel lblCategoria ;
 	private JLabel lblDescripcion ;
 	private JLabel lblValor;
+	private JFileChooser fileChooser;
 	JComboBox<Genero> comboBox ;
 	JTextArea textAreaDescripcion; 
+	private File file;
+	private File archivoLibro;
 	
 	public DialogoCrearLibro(Controlador controlador) {
 		setResizable(false);
@@ -110,6 +122,12 @@ public class DialogoCrearLibro  extends JDialog {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
+		btnSubirImagen = new JButton("subir");
+		btnSubirImagen.setBounds(410, 120, 98, 26);
+		btnSubirImagen.addActionListener(controlador);
+		btnSubirImagen.setActionCommand(Controlador.A_MOSTRAR_SUBIR_IMAGEN);
+		panel.add(btnSubirImagen);
+		
 		btnAniadir = new JButton();
 		btnAniadir.addActionListener(controlador);
 		btnAniadir.setActionCommand(Controlador.AC_CONFIRM_CREAR_LIBRO);
@@ -131,13 +149,46 @@ public class DialogoCrearLibro  extends JDialog {
 		textFieldValor.setText("");
 		textAreaDescripcion.setText("");
 	}
+	
+	public void fileCopy(String sourceFile, String destinationFile) {
+		try {
+			File inFile = new File(sourceFile);
+			File outFile = new File(destinationFile);
+
+			FileInputStream in = new FileInputStream(inFile);
+			FileOutputStream out = new FileOutputStream(outFile);
+
+			int c;
+			while( (c = in.read() ) != -1)
+				out.write(c);
+
+			in.close();
+			out.close();
+		} catch(IOException e) {
+			System.err.println("Hubo un error de entrada/salida!!!");
+		}
+	}
 
 	public Libro crearLibro(){
+		String extensionFile = Util.getFileExtension(fileChooser.getSelectedFile());
+		String rutaDestino = "src/libros/"+ textFieldTitulo.getText()+ "." + extensionFile;
+		fileCopy(fileChooser.getSelectedFile().getPath(), rutaDestino);
 		Libro libro = GestorLibros.crearLibro(textFieldTitulo.getText(), textAreaDescripcion.getText(), textFieldValor.getText()
-				, comboBox.getSelectedItem().toString(), textFieldAutor.getText());
+				, comboBox.getSelectedItem().toString(), textFieldAutor.getText(), rutaDestino);
 		dispose();
 		return libro;		 
 	}
+	
+	public File cargarLibro(){
+		fileChooser = new JFileChooser(FileSystemView.getFileSystemView());
+		fileChooser.showOpenDialog(null);
+		file = fileChooser.getSelectedFile();
+		if(file != null){
+			archivoLibro= new File(file.getPath());
+		}
+		return archivoLibro;		
+	}
+	
 	public void init(){
 		lblId.setText(ConstantesVista.LBL_ID);
 		lblTituloLibro.setText(ConstantesVista.LBL_TITULO_LIBRO);
