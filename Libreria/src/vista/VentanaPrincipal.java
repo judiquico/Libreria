@@ -23,7 +23,7 @@ public class VentanaPrincipal extends JFrame {
 	public VentanaPrincipal() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/imagenes/iconoLibreria.png")));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(600, 375);
+		setSize(600, 500);
 		setResizable(false);
 		setTitle(ConstantesVista.TITULO);
 		setLocationRelativeTo(null);

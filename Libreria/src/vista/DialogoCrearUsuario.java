@@ -85,5 +85,4 @@ public class DialogoCrearUsuario extends JDialog {
 		labelNombre.setText(ConstantesVista.LABEL_NOMBRE_REGISTRO_USUARIO);
 		labelContraseña.setText(ConstantesVista.LABEL_CONSTRASEÑA_REGISTRO_CONTRASEÑA);
 	}
-
 }

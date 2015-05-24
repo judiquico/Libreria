@@ -23,7 +23,7 @@ public class DialogoAdministrador extends JFrame {
 		this.setJMenuBar(menuLibro);
 		setTitle(ConstantesVista.TITULO_DIALOGO_ADMINISTRADOR);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoAdministrador.class.getResource("/imagenes/iconoAdministrador.png")));
-		setSize(800, 500);
+		setSize(1000, 700);
 		admin = new BarraHerramientasAdministrador(controlador);
 		panelTable = new PanelTable(controlador);
 		getContentPane().add(panelTable, BorderLayout.CENTER);

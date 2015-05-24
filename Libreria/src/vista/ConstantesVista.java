@@ -4,9 +4,9 @@ package vista;
 public class ConstantesVista {
 	public static final String TITULO = "Software Libreria - Bienvenido";
 	public static final int ANCHO_VENTANA = 600;
-	public static final int ALTO_VENTANA = 500;
-	public static final int ANCHO_DIALOGO = 600;
-	public static final int ALTO_IDALOGO = 400;
+	public static final int ALTO_VENTANA = 600;
+	public static final int ANCHO_DIALOGO = 800;
+	public static final int ALTO_IDALOGO = 500;
 	// Constantes Menu
 	public static final String T_MENU_ARCHIVO = "Archivo";
 	public static final String T_MENU_OPCIONES = "Opciones";
