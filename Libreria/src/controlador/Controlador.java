@@ -74,7 +74,6 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		case AC_CONFIRM_CREAR_LIBRO:
 			agregarNuevoLibro();
 			dialogoCrearLibro.limpiarFormulario();
-			System.out.println(gestor.getListaLibro());
 			break;
 		case AC_BTN_CANCELAR_DIALOGO:
 			dialogoCrearLibro.setVisible(false);
@@ -113,6 +112,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		if (libro != null) {	
 			gestor.agregarLibro(libro);;
 			panelTable.agregarLibroTabla(libro);
+			panelTable.actualizarTabla(gestor.getListaLibro());
 		}
 		dialogoCrearLibro.dispose();
 	}
