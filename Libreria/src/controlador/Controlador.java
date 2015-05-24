@@ -79,15 +79,12 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			dialogoUsuario.setVisible(true);
 			break;
 		case AC_RDBTN_BUSCAR_ID_ADMINISTRADOR:
-			System.out.println("ID");
 			panelTable.filtrarId();
 			break;
 		case AC_RDBTN_BUSCAR_TITULO_ADMINSTRADOR:
-			System.out.println("titulo");
 			panelTable.filtrarTitulo();
 			break;
 		case AC_RDBTN_BUSCAR_AUTOR_ADMINISTRADOR:
-			System.out.println("autor");
 			panelTable.filtroAutor();
 			break;
 		case AC_BTN_ELIMINAR_LIBRO:
