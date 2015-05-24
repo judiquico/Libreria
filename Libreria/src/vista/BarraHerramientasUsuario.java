@@ -37,7 +37,7 @@ public class BarraHerramientasUsuario extends JToolBar {
 		
 		radioAutor = new JRadioButton(ConstantesVista.RADIO_BUSCAR_AUTOR);
 		radioAutor.addActionListener(controlador);
-		radioAutor.setActionCommand(Controlador.AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR);
+		radioAutor.setActionCommand(Controlador.AC_RDBTN_BUSCAR_AUTOR_ADMINISTRADOR);
 		add(radioAutor);
 		grupoBuscar.add(radioAutor);
 		

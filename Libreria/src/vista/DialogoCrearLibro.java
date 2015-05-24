@@ -130,7 +130,7 @@ public class DialogoCrearLibro  extends JDialog {
 		
 		btnAniadir = new JButton();
 		btnAniadir.addActionListener(controlador);
-		btnAniadir.setActionCommand(Controlador.AC_CONFIRM_CREAR_LIBRO);
+		btnAniadir.setActionCommand(Controlador.AC_CREAR_LIBRO);
 		btnAniadir.setBounds(210, 12, 98, 26);
 		panel_1.add(btnAniadir);
 		

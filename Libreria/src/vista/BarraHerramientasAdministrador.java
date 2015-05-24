@@ -55,7 +55,7 @@ public class BarraHerramientasAdministrador extends JToolBar {
 		
 		radioId = new JRadioButton();
 		radioId.addActionListener(controlador);
-		radioId.setActionCommand(Controlador.AC_RDBTN_BUSCAR_ID_ADMIISTRADOR);
+		radioId.setActionCommand(Controlador.AC_RDBTN_BUSCAR_ID_ADMINISTRADOR);
 		add(radioId);
 		grupoBuscar = new ButtonGroup();
 		grupoBuscar.add(radioId);
@@ -68,7 +68,7 @@ public class BarraHerramientasAdministrador extends JToolBar {
 		
 		radioAutor = new JRadioButton();
 		radioAutor.addActionListener(controlador);
-		radioAutor.setActionCommand(Controlador.AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR);
+		radioAutor.setActionCommand(Controlador.AC_RDBTN_BUSCAR_AUTOR_ADMINISTRADOR);
 		add(radioAutor);
 		grupoBuscar.add(radioAutor);
 		textBuscar = new JTextField();

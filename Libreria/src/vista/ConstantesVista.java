@@ -3,7 +3,7 @@ package vista;
 
 public class ConstantesVista {
 
-	public static final String TITULO = "titulo";
+	public static final String TITULO = "Software Libreria - Bienvenido";
 	public static final int ANCHO_VENTANA = 600;
 	public static final int ALTO_VENTANA = 500;
 	public static final int ANCHO_DIALOGO = 600;
@@ -13,12 +13,12 @@ public class ConstantesVista {
 	public static final String T_MENU_OPCIONES = "Opciones";
 	public static final String T_MENU_ITEM_SALIR = "Salir";
 	public static final String T_MENU_ITEM_IDIOMA = "Idioma";
-	public static final String T_MENU_ITEM_BUSQUEDA = "Busqueda";
+	public static final String T_MENU_ITEM_BUSQUEDA = "Búsqueda";
 	public static final String T_MENU_ITEM_IMPORTAR = "Importar";
 	public static final String T_MENU_ITEM_EXPORTAR = "Exportar";
-	public static final String T_MENU_ITEM_INGLES = "Ingles";
+	public static final String T_MENU_ITEM_INGLES = "Inglés";
 	public static final String T_MENU_ITEM_TEMA = "Tema";
-	public static final String T_MENU_ITEM_ESPANIOL = "Espanol";
+	public static final String T_MENU_ITEM_ESPANIOL = "Español";
 	public static final String T_MENU_AYUDA = "Ayuda";
 	public static final String T_MENU_ITEM_ACERCA_DE = "Acerca de";
 	public static final String L_LABEL_INFO = "Informacion";
@@ -33,7 +33,7 @@ public class ConstantesVista {
 	public static final String BTN_CONFIRMAR_USUARIO = "Confirmar";
 	public static final String LBL_USUARIO_LIBRO = "Libro";
 	public static final String LBL_USUARIO_AUTOR = "Autor";
-	public static final String LBL_USUARIO_GENERO = "Genero";
+	public static final String LBL_USUARIO_GENERO = "Género";
 	
 	//constantes BarraHerramientasUsuario
 	public static final String BTN_COMPRAR_LIBRO = "Comprar Libro";
@@ -54,12 +54,11 @@ public class ConstantesVista {
 	//constantes dialogoCrear
 	public static final String LBL_AUTOR = "Autor";
 	public static final String LBL_CATEGORIA = "Categoria";
-	public static final String LBL_DESCRIPCION = "Descripcion";
+	public static final String LBL_DESCRIPCION = "Descripción";
 	public static final String LBL_ID = "ID";
 	public static final String LBL_VALOR = "Valor";
 	public static final String TITULO_DIALOGO_LOGIN_USER = "Registrar Usuario";
 	public static final String BTN_CREAR_NUEVO_USUARIO = "Crear Nuevo Usuario";
 	public static final String LABEL_NOMBRE_REGISTRO_USUARIO = "Nombre";
-	public static final String LABEL_CONSTRASEÑA_REGISTRO_CONTRASEÑA = "Constraseña";
-
+	public static final String LABEL_CONSTRASEÑA_REGISTRO_CONTRASEÑA = "Contraseña";
 }

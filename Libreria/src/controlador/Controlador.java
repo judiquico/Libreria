@@ -28,12 +28,12 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public static final String AC_BTN_ADMINISTRADOR = "BOTON ENTRAR POR ADMINISTRADOR";
 	public static final String AC_BTN_COMPRAR_LIBRO = "ACCION COMPRAR LIBRO";
 	public static final String AC_MOSTRAR_DIALOGO_CREAR_LIBRO = "DIALOGO CREAR NUEVO LIBRO";
-	public static final String AC_CONFIRM_CREAR_LIBRO = "CREAR EL NUEVO LIBRO";
+	public static final String AC_CREAR_LIBRO = "CREAR EL NUEVO LIBRO";
 	public static final String AC_BTN_CANCELAR_DIALOGO = "CERRAR EL DIALOGO";
 	public static final String AC_BTN_CONFIRMAR_USUARIO = "CONFIRMAR USUARIO";
-	public static final String AC_RDBTN_BUSCAR_ID_ADMIISTRADOR = "BUSCAR POR ID ADMINISTRADOR";
+	public static final String AC_RDBTN_BUSCAR_ID_ADMINISTRADOR = "BUSCAR POR ID ADMINISTRADOR";
 	public static final String AC_RDBTN_BUSCAR_TITULO_ADMINSTRADOR = "BUSCAR POR TITULO EN ADMINISTRADOR";
-	public static final String AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR = "BUSCAR POR AUTOR EN ADMNISTRADOR";
+	public static final String AC_RDBTN_BUSCAR_AUTOR_ADMINISTRADOR = "BUSCAR POR AUTOR EN ADMNISTRADOR";
 	public static final String AC_BTN_ELIMINAR_LIBRO = "ELIMINAR LIBRO";
 	public static final String AC_BTN_CAMBIAR_A_ESPANIOL = "CAMBIAR IDIOMA A ESPANOL";
 	public static final String AC_BTN_CAMBIAR_A_INGLES = "CAMBIAR IDIOMA A INGLES";
@@ -71,7 +71,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		case AC_MOSTRAR_DIALOGO_CREAR_LIBRO:
 			dialogoCrearLibro.setVisible(true);
 			break;
-		case AC_CONFIRM_CREAR_LIBRO:
+		case AC_CREAR_LIBRO:
 			agregarNuevoLibro();
 			dialogoCrearLibro.limpiarFormulario();
 			break;
@@ -80,7 +80,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		case AC_BTN_CONFIRMAR_USUARIO:
 			dialogoUsuario.setVisible(true);
 			break;
-		case AC_RDBTN_BUSCAR_ID_ADMIISTRADOR:
+		case AC_RDBTN_BUSCAR_ID_ADMINISTRADOR:
 			System.out.println("ID");
 			panelTable.filtrarId();
 			break;
@@ -88,7 +88,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			System.out.println("titulo");
 			panelTable.filtrarTitulo();
 			break;
-		case AC_RDBTN_BUSCAR_AUTOR_ADMNISTRADOR:
+		case AC_RDBTN_BUSCAR_AUTOR_ADMINISTRADOR:
 			System.out.println("autor");
 			panelTable.filtroAutor();
 			break;
