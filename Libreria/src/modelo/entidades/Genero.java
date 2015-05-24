@@ -7,7 +7,7 @@ public enum Genero{
 	POLITICA ("Política"), RELIGION ("Religión"), MISTERIO ("Misterio"), CIENCIAS_EXACTAS ("Ciencias exactas"), FILOSOFIA ("Filosofía"), 
 	ARTE ("Arte"), ARQUITECTUTA ("Arquitectura"), EDUCACION ("Educación"), OCULTISMO ("Ocultismo"), HISTORIA ("Historia"), 
 	GEOGRAFIA ("Geografía"), OTROS ("Otros");
-	
+
 	private final String genero;
 
 	private Genero(String s) {

@@ -19,7 +19,6 @@ import controlador.Controlador;
 import modelo.entidades.Genero;
 
 public class DialogoUsuario extends JDialog {
-
 	private static final long serialVersionUID = 1L;
 	private JPanel panelCentral;
 	private JTextField textField;
@@ -33,7 +32,7 @@ public class DialogoUsuario extends JDialog {
 	private JButton okButton;
 	private JButton cancelButton;
 	private MenuLibro menuLibro;
-	
+
 	public DialogoUsuario(Controlador controlador) {
 		setFont(new Font("Dialog", Font.PLAIN, 16));
 		setTitle("Usuario");
@@ -49,7 +48,7 @@ public class DialogoUsuario extends JDialog {
 		add(usuario, BorderLayout.NORTH);
 		panelTable = new PanelTable(controlador);
 		add(panelTable, BorderLayout.WEST);
-		
+
 		panelCentral.setBackground(new Color(204, 204, 255));
 		panelCentral.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.add(panelCentral, BorderLayout.CENTER);
@@ -78,7 +77,7 @@ public class DialogoUsuario extends JDialog {
 
 		this.comboBox = new JComboBox<Genero>();
 		this.comboBox
-				.setModel(new DefaultComboBoxModel<Genero>(Genero.values()));
+		.setModel(new DefaultComboBoxModel<Genero>(Genero.values()));
 		this.comboBox.setBounds(118, 116, 209, 20);
 		this.panelCentral.add(this.comboBox);
 		{

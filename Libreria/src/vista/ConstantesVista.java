@@ -2,7 +2,6 @@ package vista;
 
 
 public class ConstantesVista {
-
 	public static final String TITULO = "Software Libreria - Bienvenido";
 	public static final int ANCHO_VENTANA = 600;
 	public static final int ALTO_VENTANA = 500;
@@ -34,7 +33,7 @@ public class ConstantesVista {
 	public static final String LBL_USUARIO_LIBRO = "Libro";
 	public static final String LBL_USUARIO_AUTOR = "Autor";
 	public static final String LBL_USUARIO_GENERO = "Género";
-	
+
 	//constantes BarraHerramientasUsuario
 	public static final String BTN_COMPRAR_LIBRO = "Comprar Libro";
 	// constates BarraHerramientaAdministrador

@@ -1,7 +1,6 @@
 package modelo.entidades;
 
 public class Libreria {
-
 	private String nombre;
 	private Libro libro;
 	private String direccion;
@@ -15,9 +14,9 @@ public class Libreria {
 		this.direccion = direccion;
 		this.usuario = usuario;
 	}
-	
+
 	public void agregarLibro (){
-		
+
 	}
 
 	public String getNombre() {
@@ -51,5 +50,4 @@ public class Libreria {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
 }

@@ -12,16 +12,14 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 
 public class VentanaPrincipal extends JFrame {
-
 	private static final long serialVersionUID = 1L;
 	private ImageIcon backgorund;
 	private JLabel lblImagen;
 	private Controlador controlador;
-	
 	private JPanel panel ;
 	private JButton btnUsuario ;
 	private JButton btnAdministrador ;
-	
+
 	public VentanaPrincipal() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/imagenes/iconoLibreria.png")));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -68,7 +66,7 @@ public class VentanaPrincipal extends JFrame {
 	public void setBackgorund(ImageIcon backgorund) {
 		this.backgorund = backgorund;
 	}
-	
+
 	public void init(){
 		this.setTitle(ConstantesVista.TITULO);
 		btnUsuario.setText(ConstantesVista.BTN_USUARIO);

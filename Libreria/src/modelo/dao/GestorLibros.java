@@ -6,7 +6,6 @@ import modelo.excepciones.ExcepcionLibroNoEncontrado;
 import modelo.util.Util;
 
 public class GestorLibros {
-
 	private ArrayList<Libro> listaLibro;
 
 	public GestorLibros() {

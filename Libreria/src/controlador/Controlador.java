@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -23,7 +22,6 @@ import vista.PanelTable;
 import vista.VentanaPrincipal;
 
 public class Controlador implements ActionListener, ListSelectionListener {
-
 	public static final String AC_BTN_USUARIO = "BOTON ENTRAR POR USUARIO";
 	public static final String AC_BTN_ADMINISTRADOR = "BOTON ENTRAR POR ADMINISTRADOR";
 	public static final String AC_BTN_COMPRAR_LIBRO = "ACCION COMPRAR LIBRO";
@@ -107,6 +105,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			implementarArchivoLibro();
 		}
 	}
+
 	public void agregarNuevoLibro(){
 		Libro libro = dialogoCrearLibro.crearLibro();
 		if (libro != null) {	
@@ -116,12 +115,14 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		}
 		dialogoCrearLibro.dispose();
 	}
+
 	private void actualizarIdiomaEspanol(){
 		cargarProperties("/archivos_properties/espanol.properties");
 		dialogoAdministrador.init();
 		dialogoUsuario.init();
 		dialogoCrearLibro.init();
 	}
+
 	private void actualizarIdiomaIngles(){
 		cargarProperties("/archivos_properties/ingles.properties");
 		dialogoAdministrador.init();
@@ -131,8 +132,9 @@ public class Controlador implements ActionListener, ListSelectionListener {
 
 	@Override
 	public void valueChanged(ListSelectionEvent arg0) {
-		
+
 	}
+
 	public void eliminarLibro(){
 		int id = panelTable.eliminarLibro();
 		try {
@@ -141,7 +143,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void cargarProperties(String archivo){
 		InputStream input = getClass().getClassLoader().getResourceAsStream(archivo);
 		if (input != null) {
@@ -152,7 +154,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			}
 		}
 	}
-	
+
 	public File implementarArchivoLibro(){
 		File archivoLibro = dialogoCrearLibro.cargarLibro();
 		return archivoLibro;

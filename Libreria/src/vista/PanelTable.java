@@ -17,7 +17,6 @@ import modelo.util.Util;
 import controlador.Controlador;
 
 public class PanelTable  extends JPanel{
-
 	/**
 	 * @author Ruth Rojas
 	 */
@@ -26,9 +25,9 @@ public class PanelTable  extends JPanel{
 	private DefaultTableModel modelo;
 	private BarraHerramientasAdministrador barraAdministrador;
 	private TableRowSorter<TableModel> trsfiltro;
-	
-	
+
 	public PanelTable(Controlador controlador) {
+		barraAdministrador = new BarraHerramientasAdministrador(controlador);
 		modelo = new DefaultTableModel(){
 			private static final long serialVersionUID = 1L;
 
@@ -38,69 +37,74 @@ public class PanelTable  extends JPanel{
 		};
 		modelo.setColumnIdentifiers(new String[]{"Id", "Nombre", "Información", "Valor"});
 		tablaLibros = new JTable(modelo);
-		barraAdministrador = new BarraHerramientasAdministrador(controlador);
 		tablaLibros.getTableHeader().setReorderingAllowed(false);
 		tablaLibros.getSelectionModel().addListSelectionListener(controlador);
 		add(new JScrollPane(tablaLibros));
 	}
+
 	public int getSelect(){
 		return tablaLibros.getSelectedRow();
 	}
-	
+
 	public void agregarLibroTabla(Libro libro){
 		modelo.addRow(Util.libroAVector(libro));
 	}
-	
+
 	public void actualizarTabla(ArrayList<Libro> listaLibros){
 		for (Libro libro : listaLibros) {
 			modelo.addRow(Util.libroAVector(libro));
 		}
 	}
-	
+
 	public void filtroId(){
 		trsfiltro.setRowFilter(RowFilter.regexFilter(barraAdministrador.getTextBuscar().getText(), 0));
 	}
+
 	public void filtroTitulo(){
 		trsfiltro.setRowFilter(RowFilter.regexFilter(barraAdministrador.getTextBuscar().getText(), 1));
 	}
+
 	public void filtroAutor(){
 		trsfiltro.setRowFilter(RowFilter.regexFilter(barraAdministrador.getTextBuscar().getText(), 2));
 	}
+
 	public void filtrarId() {
 		barraAdministrador.getTextBuscar().addKeyListener(new KeyAdapter() {
 			public void keyReleased(final KeyEvent e) {
-			String cadena = (barraAdministrador.getTextBuscar().getText());
-			barraAdministrador.getTextBuscar().setText(cadena);
-			repaint();
-			filtrarId();
+				String cadena = (barraAdministrador.getTextBuscar().getText());
+				barraAdministrador.getTextBuscar().setText(cadena);
+				repaint();
+				filtrarId();
 			}
-			});
-			trsfiltro = new TableRowSorter<TableModel>(tablaLibros.getModel());
-			tablaLibros.setRowSorter(trsfiltro);
+		});
+		trsfiltro = new TableRowSorter<TableModel>(tablaLibros.getModel());
+		tablaLibros.setRowSorter(trsfiltro);
 	}
+
 	public void filtrarTitulo() {
 		barraAdministrador.getTextBuscar().addKeyListener(new KeyAdapter() {
 			public void keyReleased(final KeyEvent e) {
-			String cadena = (barraAdministrador.getTextBuscar().getText());
-			barraAdministrador.getTextBuscar().setText(cadena);
-			repaint();
-			filtroTitulo();
+				String cadena = (barraAdministrador.getTextBuscar().getText());
+				barraAdministrador.getTextBuscar().setText(cadena);
+				repaint();
+				filtroTitulo();
 			}
-			});
-			trsfiltro = new TableRowSorter<TableModel>(tablaLibros.getModel());
-			tablaLibros.setRowSorter(trsfiltro);
+		});
+		trsfiltro = new TableRowSorter<TableModel>(tablaLibros.getModel());
+		tablaLibros.setRowSorter(trsfiltro);
 	}
+
 	public void filtrarAutor() {
 		barraAdministrador.getTextBuscar().addKeyListener(new KeyAdapter() {
 			public void keyReleased(final KeyEvent e) {
-			String cadena = (barraAdministrador.getTextBuscar().getText());
-			barraAdministrador.getTextBuscar().setText(cadena);
-			repaint();
-			filtroAutor();
+				String cadena = (barraAdministrador.getTextBuscar().getText());
+				barraAdministrador.getTextBuscar().setText(cadena);
+				repaint();
+				filtroAutor();
 			}
-			});
-			trsfiltro = new TableRowSorter<TableModel>(tablaLibros.getModel());
-			tablaLibros.setRowSorter(trsfiltro);
+		});
+		trsfiltro = new TableRowSorter<TableModel>(tablaLibros.getModel());
+		tablaLibros.setRowSorter(trsfiltro);
 	}
 
 	public int eliminarLibro() {

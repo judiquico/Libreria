@@ -7,7 +7,6 @@ import modelo.excepciones.ExcepcionClienteNoEncontrado;
 import modelo.util.Util;
 
 public class GestorCliente {
-
 	private ArrayList<Cliente> listaClientes;
 
 	public GestorCliente() {

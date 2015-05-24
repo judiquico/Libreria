@@ -6,7 +6,6 @@ import modelo.entidades.Autor;
 import modelo.excepciones.ExcepcionAutorNoEncontrado;
 
 public class GestorAutor {
-
 	private ArrayList<Autor> listaAutor;
 
 	public GestorAutor() {
@@ -38,11 +37,11 @@ public class GestorAutor {
 		}
 		throw new ExcepcionAutorNoEncontrado(id);
 	}
-	
+
 	public static Autor crearAutor(String nombre, String image){
-			return new Autor(nombre);	
+		return new Autor(nombre);	
 	}
-	
+
 	public ArrayList<Autor> getListaAutor() {
 		return listaAutor;
 	}

@@ -10,7 +10,6 @@ import javax.swing.JToolBar;
 import controlador.Controlador;
 
 public class BarraHerramientasAdministrador extends JToolBar {
-
 	/**
 	 * @author Ruth Rojas 
 	 */
@@ -27,45 +26,45 @@ public class BarraHerramientasAdministrador extends JToolBar {
 	private ButtonGroup grupoBuscar;
 	private JButton btnBuscar;
 	private JButton btnMostrarDialogoCrearUsuario;
-	
+
 	public BarraHerramientasAdministrador(Controlador controlador) {
 		btnCrearLibro = new JButton();
 		btnCrearLibro.addActionListener(controlador);
 		btnCrearLibro.setActionCommand(Controlador.AC_MOSTRAR_DIALOGO_CREAR_LIBRO);
 		add(btnCrearLibro);
-		
+
 		btnMostrarDialogoCrearUsuario = new JButton();
 		btnMostrarDialogoCrearUsuario.addActionListener(controlador);
 		btnMostrarDialogoCrearUsuario.setActionCommand(Controlador.AC_BTN_MOSTRAR_DIALOGO_CREAR_USUARIO);
 		add(btnMostrarDialogoCrearUsuario);
-		
+
 		btnActualizar = new JButton();
 		add(btnActualizar);
 		btnEditar = new JButton();
 		add(btnEditar);
-		
+
 		btnEliminar = new JButton();
 		btnEliminar.addActionListener(controlador);
 		btnEliminar.setActionCommand(Controlador.AC_BTN_ELIMINAR_LIBRO);
 		add(btnEliminar);
-		
+
 		addSeparator();
 		labelBuscar = new JLabel();
 		add(labelBuscar);
-		
+
 		radioId = new JRadioButton();
 		radioId.addActionListener(controlador);
 		radioId.setActionCommand(Controlador.AC_RDBTN_BUSCAR_ID_ADMINISTRADOR);
 		add(radioId);
 		grupoBuscar = new ButtonGroup();
 		grupoBuscar.add(radioId);
-		
+
 		radioBuscarTitulo = new JRadioButton();
 		radioBuscarTitulo.addActionListener(controlador);
 		radioBuscarTitulo.setActionCommand(Controlador.AC_RDBTN_BUSCAR_TITULO_ADMINSTRADOR);
 		add(radioBuscarTitulo);
 		grupoBuscar.add(radioBuscarTitulo);
-		
+
 		radioAutor = new JRadioButton();
 		radioAutor.addActionListener(controlador);
 		radioAutor.setActionCommand(Controlador.AC_RDBTN_BUSCAR_AUTOR_ADMINISTRADOR);
@@ -96,5 +95,4 @@ public class BarraHerramientasAdministrador extends JToolBar {
 	public void setTextBuscar(JTextField textBuscar) {
 		this.textBuscar = textBuscar;
 	}
-	
 }

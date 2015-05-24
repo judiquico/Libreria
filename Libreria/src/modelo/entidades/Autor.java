@@ -1,7 +1,6 @@
 package modelo.entidades;
 
 public class Autor {
-
 	private int id_autor;
 	private String nombre;
 
@@ -25,7 +24,7 @@ public class Autor {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	@Override
 	public String toString() {
 		return nombre;

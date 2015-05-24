@@ -15,7 +15,6 @@ import javax.swing.JTextField;
 import controlador.Controlador;
 
 public class DialogoCrearUsuario extends JDialog {
-
 	/**
 	 * @author Ruth Rojas
 	 */
@@ -37,20 +36,20 @@ public class DialogoCrearUsuario extends JDialog {
 		GridBagConstraints gb = new GridBagConstraints();
 		gb.fill = GridBagConstraints.BOTH;
 		gb.insets = new Insets(1, 2, 5, 5);
-		
+
 		panelCampos = new JPanel();
 		panelCampos.setLayout(new GridBagLayout());
-		
+
 		labelNombre = new JLabel();
 		gb.gridx = 0;
 		gb.gridy = 0;
 		panelCampos.add(labelNombre);
-		
+
 		textFielNombre = new JTextField(20);
 		gb.gridx = 1;
 		gb.gridy = 0;
 		panelCampos.add(textFielNombre, gb);
-		
+
 
 		labelContraseña = new JLabel();
 		gb.gridx = 0;

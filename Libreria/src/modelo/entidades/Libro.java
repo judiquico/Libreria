@@ -3,7 +3,6 @@ package modelo.entidades;
 import java.io.Serializable;
 
 public class Libro implements Serializable{
-	
 	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private String descripcion;
@@ -15,7 +14,6 @@ public class Libro implements Serializable{
 	private int id;
 	private String ruta;
 	private static int consecutivo;
-
 
 	public Libro(String nombre, String descripcion, double valor, String genero, String autor, String ruta) {
 		consecutivo++;

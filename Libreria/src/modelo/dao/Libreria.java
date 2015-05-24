@@ -15,7 +15,7 @@ public class Libreria {
 
 	public void registrarCompra(Cliente cliente, Libro libro) {
 		if (cliente.getDinero() >= libro.getValor()) {
-			
+
 		}
 
 	}
