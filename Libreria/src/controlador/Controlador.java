@@ -19,6 +19,7 @@ import modelo.excepciones.ExcepcionLibroNoEncontrado;
 import vista.DialogoAdministrador;
 import vista.DialogoCrearLibro;
 import vista.DialogoCrearUsuario;
+import vista.DialogoLoginUsuario;
 import vista.DialogoUsuario;
 import vista.PanelTable;
 import vista.VentanaPrincipal;
@@ -40,6 +41,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	public static final String AC_BTN_MOSTRAR_DIALOGO_CREAR_USUARIO = "MOSTRAR DIALODO CREAR UN USUARIO NUEVO";
 	public static final String AC_BTN_CREAR_USUARIO = "CREAR UN NUEVO USUARIO";
 	public static final String A_MOSTRAR_SUBIR_IMAGEN = "BTN_SUBIR_IMAGEN";
+	public static final String AC_BTN_VERIFICAR_Y_ENTRAR_POR_USUARIO = "ENTRAR POR EL USUARIO";
 	private DialogoAdministrador dialogoAdministrador;
 	private DialogoUsuario dialogoUsuario;
 	private DialogoCrearLibro dialogoCrearLibro;
@@ -47,6 +49,7 @@ public class Controlador implements ActionListener, ListSelectionListener {
 	private PanelTable panelTable;
 	private Properties properties;
 	private DialogoCrearUsuario dialogoCrearUSuario;
+	private DialogoLoginUsuario dialogoLoginUsuario;
 
 	public Controlador() {
 		dialogoAdministrador = new DialogoAdministrador(this);
@@ -56,15 +59,13 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		gestor = new GestorLibros();
 		properties = new Properties();
 		dialogoCrearUSuario = new DialogoCrearUsuario(this);
+		dialogoLoginUsuario = new DialogoLoginUsuario(this);
 		cargarProperties("/archivos_properties/ingles.properties");
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
-		case AC_BTN_USUARIO:
-			dialogoUsuario.setVisible(true);
-			break;
 		case AC_BTN_ADMINISTRADOR:
 			dialogoAdministrador.setVisible(true);
 			break;
@@ -105,6 +106,13 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		case AC_BTN_CREAR_USUARIO:
 			Cliente s = new Cliente(dialogoCrearUSuario.getTextFielNombre().getText(), dialogoCrearUSuario.getTextFielContraseña().getText());
 			exportarTexto(s);
+		case AC_BTN_VERIFICAR_Y_ENTRAR_POR_USUARIO:
+			dialogoUsuario.setVisible(true);
+			System.out.println("verificar");
+			break;
+		case AC_BTN_USUARIO:
+			dialogoLoginUsuario.setVisible(true);
+			
 		}
 	}
 

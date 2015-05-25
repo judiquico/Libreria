@@ -60,4 +60,7 @@ public class ConstantesVista {
 	public static final String BTN_CREAR_NUEVO_USUARIO = "Crear Nuevo Usuario";
 	public static final String LABEL_NOMBRE_REGISTRO_USUARIO = "Nombre";
 	public static final String LABEL_CONSTRASEÑA_REGISTRO_CONTRASEÑA = "Contraseña";
+	public static final String BTN_INGRESAR_USUARIO = "Ingresar";
+	public static final String TITULO_DIALOGO_LOGIN_USER_INICIAL = "Entrar por Usuario";
+	public static final String LABEL_ENCABEZADO_LOGIN_USER = "Digite nombre y contraseña de usuario";
 }
