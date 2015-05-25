@@ -132,7 +132,6 @@ public class Controlador implements ActionListener, ListSelectionListener {
 		if (libro != null) {	
 			gestor.agregarLibro(libro);;
 			panelTable.agregarLibroTabla(libro);
-			panelTable.actualizarTabla(gestor.getListaLibro());
 		}
 		dialogoCrearLibro.dispose();
 	}

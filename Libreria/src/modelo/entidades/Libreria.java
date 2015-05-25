@@ -4,15 +4,15 @@ public class Libreria {
 	private String nombre;
 	private Libro libro;
 	private String direccion;
-	private Usuario usuario;
+	private Cliente cliente;
 
 	public Libreria(String nombre, Libro libro, String direccion,
-			Usuario usuario) {
+			Cliente cliente) {
 		super();
 		this.nombre = nombre;
 		this.libro = libro;
 		this.direccion = direccion;
-		this.usuario = usuario;
+		this.cliente = cliente;
 	}
 
 	public void agregarLibro (){
@@ -43,11 +43,11 @@ public class Libreria {
 		this.direccion = direccion;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 }
