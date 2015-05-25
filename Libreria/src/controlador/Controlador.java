@@ -11,7 +11,9 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import persistencia.Texto;
 import modelo.dao.GestorLibros;
+import modelo.entidades.Cliente;
 import modelo.entidades.Libro;
 import modelo.excepciones.ExcepcionLibroNoEncontrado;
 import vista.DialogoAdministrador;
@@ -100,7 +102,21 @@ public class Controlador implements ActionListener, ListSelectionListener {
 			dialogoCrearUSuario.setVisible(true);
 		case A_MOSTRAR_SUBIR_IMAGEN:
 			implementarArchivoLibro();
+		case AC_BTN_CREAR_USUARIO:
+			Cliente s = new Cliente(dialogoCrearUSuario.getTextFielNombre().getText(), dialogoCrearUSuario.getTextFielContraseña().getText());
+			exportarTexto(s);
 		}
+	}
+
+	public void exportarTexto(Cliente s){
+		Texto.CrearArchivoTexto("src/archivos_usuarios/"+ s.getNombre()+ ".txt");
+		Texto.abrir('w');
+		Texto.grabar("Nombre " + ":" + s.getNombre());
+		Texto.grabar("Id " + ":" + s.getId());
+		Texto.grabar("Contrasena"+ ":" + s.getContrasena());
+		Texto.grabar("Dinero Disponible " + ":" + s.getDinero());
+		Texto.grabar("Libros adquiridos " + ":" + s.getListaLibro());
+		Texto.cerrar();
 	}
 
 	public void agregarNuevoLibro(){

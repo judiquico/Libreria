@@ -1,0 +1,4 @@
+Nombre :ruth
+Id :0
+Contrasena:ruth
+Valor :0.0

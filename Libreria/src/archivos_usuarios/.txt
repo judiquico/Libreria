@@ -1,0 +1,5 @@
+Nombre :
+Id :0
+Contrasena:
+Dinero Disponible :0.0
+Libros adquiridos :null

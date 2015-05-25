@@ -85,4 +85,21 @@ public class DialogoCrearUsuario extends JDialog {
 		labelNombre.setText(ConstantesVista.LABEL_NOMBRE_REGISTRO_USUARIO);
 		labelContraseña.setText(ConstantesVista.LABEL_CONSTRASEÑA_REGISTRO_CONTRASEÑA);
 	}
+
+	public JTextField getTextFielNombre() {
+		return textFielNombre;
+	}
+
+	public void setTextFielNombre(JTextField textFielNombre) {
+		this.textFielNombre = textFielNombre;
+	}
+
+	public JPasswordField getTextFielContraseña() {
+		return textFielContraseña;
+	}
+
+	public void setTextFielContraseña(JPasswordField textFielContraseña) {
+		this.textFielContraseña = textFielContraseña;
+	}
+	
 }
